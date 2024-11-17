@@ -35,5 +35,5 @@
       "@layouts/*": ["src/layouts/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "custom.d.ts"]
 }
