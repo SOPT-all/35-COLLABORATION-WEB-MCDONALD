@@ -24,6 +24,7 @@ export default tseslint.config(
         { allowConstantExport: true },
       ],
       'no-var': 'error', // var 금지
+      '@typescript-eslint/no-unused-vars': 'warn',
       'prefer-const': 'error', // const 사용을 권장하고, let은 const로 바꿀 수 있으면 바꾸도록
       'prefer-template': 'warn', // 문자열 결합시 템플릿 리터럴 사용 강제
       'capitalized-comments': [
