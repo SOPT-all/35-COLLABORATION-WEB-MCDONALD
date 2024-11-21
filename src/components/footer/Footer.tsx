@@ -1,24 +1,42 @@
-import { footerStyle } from "./Footer.style"
+import { WebIsms } from '@assets/svgs';
+import { footerStyle } from './Footer.style';
 
-const Footer = () => {
-  return (
-    <footer css={footerStyle}>
-        <form>
-            <div className='highlightMenu'>개인정보 처리방침</div>
-            <div>위치정보 이용약관</div>
-            <div>사이트맵</div>
-            <div>임차문의</div>
-            <div>고객문의</div>
-            <div>인재채용</div>
-            <div className="bottomMenu">PC버전</div>
-            <div className="bottomMenu">ENG</div>
-        </form>
-        <div></div>
-        <div></div>
+const Footer = () => (
+  <footer css={footerStyle}>
+    <form>
+      <div className="highlightMenu">개인정보 처리방침</div>
+      <div>위치정보 이용약관</div>
+      <div>사이트맵</div>
+      <div>임차문의</div>
+      <div>고객문의</div>
+      <div>인재채용</div>
+      <div className="bottomMenu">PC버전</div>
+      <div className="bottomMenu">ENG</div>
+    </form>
 
-        <div></div>
-    </footer>
-  )
-}
+    <div className="middle">
+      <p>한국맥도날드(유)</p>
+      <p>대표이사: 김기원</p>
+      <p>사업자등록번호: 101-81-26409</p>
+      <p>전화주문: 1600-5252</p>
+    </div>
 
-export default Footer
+    <div className="copyright">
+      <p>COPYRIGHT©2019 ALL RIGHT RESERVED BY McDonald’s</p>
+    </div>
+
+    <div className="bottom">
+      <div className="bottomLeft">
+        <WebIsms className="webIsms" />
+      </div>
+      <div className="bottomRight">
+        <p>
+          [인증범위 : 대외서비스(홈페이지, 맥딜리버리, 채용, VOC,
+          쿠폰앱)(심사받지 않은 물리적 인프라 영역 제외)]
+        </p>
+      </div>
+    </div>
+  </footer>
+);
+
+export default Footer;

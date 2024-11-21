@@ -2,17 +2,19 @@ import { Theme } from '@emotion/react';
 import { css } from '@emotion/react';
 
 export const footerStyle = (theme: Theme) => css`
-  width: 375px;
-  height: 624px;
+  display: flex;
+  flex-direction: column;
+  width: 37.5rem;
+  height: 62.4rem;
   background-color: ${theme.colors.gray700};
 
   & form {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    width: 345px;
-    height: 161px;
-    max-width: 345px;
-    margin: 3.3rem 1.5rem 43rem 1.5rem;
+    width: 34.5rem;
+    height: 16.1rem;
+    max-width: 34.5rem;
+    margin: 3.3rem 1.5rem 0 1.5rem;
     align-items: center;
     border-bottom: 0.1rem solid ${theme.colors.gray500};
     ${theme.fonts.body09}
@@ -29,7 +31,47 @@ export const footerStyle = (theme: Theme) => css`
     color: ${theme.colors.white};
   }
 
-  &form .bottomMenu {
+  & form .bottomMenu {
     margin-bottom: 1.4rem;
+  }
+
+  & .middle {
+    display: flex;
+    flex-direction: column;
+    width: 34.5rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    padding: 3rem 0;
+    border-bottom: 0.1rem solid ${theme.colors.gray500};
+    align-items: flex-start;
+  }
+
+  & .middle p {
+    ${theme.fonts.body08}
+    color: ${theme.colors.gray300};
+    padding-top: 0.1rem;
+    padding-bottom: 0.2rem;
+  }
+
+  & .copyright {
+    display: inline-flex;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    padding: 3rem 15.6rem 4rem 0;
+    ${theme.fonts.body11}
+    color: ${theme.colors.gray300};
+  }
+
+  & .bottom {
+    display: flex;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    gap: 1.7rem;
+  }
+
+  & .webIsms {
+    width: 60px;
+    height: 60px;
+    border-radius: 0.6rem;
   }
 `;
