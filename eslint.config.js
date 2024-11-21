@@ -1,8 +1,8 @@
-import js from '@eslint/js'
-import globals from 'globals'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
-import tseslint from 'typescript-eslint'
+import js from '@eslint/js';
+import globals from 'globals';
+import reactHooks from 'eslint-plugin-react-hooks';
+import reactRefresh from 'eslint-plugin-react-refresh';
+import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
   { ignores: ['dist'] },
@@ -30,16 +30,16 @@ export default tseslint.config(
       'capitalized-comments': [
         'warn',
         'always',
-        { 
-          ignoreConsecutiveComments: true, 
-          ignorePattern: '^[A-Z_]+$' // 대문자 스네이크 케이스 상수 이름 규칙 추가
-        }
+        {
+          ignoreConsecutiveComments: true,
+          ignorePattern: '^[A-Z_]+$', // 대문자 스네이크 케이스 상수 이름 규칙 추가
+        },
       ],
       // 함수명 네이밍 규칙
-      'camelcase': ['error', { properties: 'always' }], // 카멜 케이스 사용을 강제
+      camelcase: ['error', { properties: 'always' }], // 카멜 케이스 사용을 강제
       // 화살표 함수 사용을 권장하는 규칙
       'prefer-arrow-callback': 'warn', // 가능하면 화살표 함수 사용
       'arrow-body-style': ['warn', 'as-needed'], // 화살표 함수 본문을 간소화 필요없는 중괄호 제거
     },
   },
-)
+);
