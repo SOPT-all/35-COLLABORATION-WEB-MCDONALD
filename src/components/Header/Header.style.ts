@@ -5,6 +5,8 @@ export const HeaderContainer = (isLine: boolean) => (theme: Theme) =>
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top: 0;
     width: 37.5rem;
     height: 6.2rem;
     background-color: ${theme.colors.white};
