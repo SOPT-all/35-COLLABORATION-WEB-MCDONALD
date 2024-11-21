@@ -1,4 +1,4 @@
-import { footerStyle } from './footer.style'
+import { footerStyle } from "./Footer.style"
 
 const Footer = () => {
   return (
@@ -10,8 +10,8 @@ const Footer = () => {
             <div>임차문의</div>
             <div>고객문의</div>
             <div>인재채용</div>
-            <div>PC버전</div>
-            <div>ENG</div>
+            <div className="bottomMenu">PC버전</div>
+            <div className="bottomMenu">ENG</div>
         </form>
         <div></div>
         <div></div>
