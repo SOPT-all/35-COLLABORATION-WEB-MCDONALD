@@ -1,4 +1,4 @@
-import BurgerPost from './BugerPost';
+import BurgerPost from './BurgerPost';
 
 export default {
   title: 'Components/BurgerPost',
