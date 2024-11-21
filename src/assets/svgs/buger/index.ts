@@ -1,0 +1,10 @@
+export { default as ImgMenu1 } from './ImgMenu1';
+export { default as ImgMenu10 } from './ImgMenu10';
+export { default as ImgMenu2 } from './ImgMenu2';
+export { default as ImgMenu3 } from './ImgMenu3';
+export { default as ImgMenu4 } from './ImgMenu4';
+export { default as ImgMenu5 } from './ImgMenu5';
+export { default as ImgMenu6 } from './ImgMenu6';
+export { default as ImgMenu7 } from './ImgMenu7';
+export { default as ImgMenu8 } from './ImgMenu8';
+export { default as ImgMenu9 } from './ImgMenu9';

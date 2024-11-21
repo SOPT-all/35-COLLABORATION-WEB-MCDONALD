@@ -1,18 +1,16 @@
-/** @jsxImportSource @emotion/react */
-import BurgerPost from "./BugerPost";
+import BurgerPost from './BugerPost';
 
 export default {
-  title: "Components/BurgerPost",
+  title: 'Components/BurgerPost',
   component: BurgerPost,
 };
 
 export const Default = {
-  args: {
-  },
+  args: {},
 };
 
 export const Favorited = {
   args: {
-    isHighlighted: true, 
+    isHighlighted: true,
   },
 };
