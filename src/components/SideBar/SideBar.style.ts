@@ -2,10 +2,10 @@ import { Theme, css } from '@emotion/react';
 
 export const Wrapper = (isOpen: boolean) =>
   css`
-    position: fixed;
-    margin-left: ${isOpen ? '0' : '37.5rem'};
+    position: absolute;
+    margin-left: ${isOpen ? '0' : '100%'};
     transition: margin-left 0.3s ease;
-    width: 37.5rem;
+    width: 100%;
     height: 100vh;
     z-index: 2;
   `;
@@ -63,12 +63,16 @@ export const SubList =
       color: ${theme.colors.black};
       ${theme.fonts.title04};
       word-break: keep-all;
+
+      li {
+        cursor: pointer;
+      }
     `;
 
 export const BottomSection = css`
   position: absolute;
   bottom: 0;
-  width: 37.5rem;
+  width: 100%;
 `;
 
 export const SearchBox = (theme: Theme) =>
