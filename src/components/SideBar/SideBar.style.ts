@@ -3,11 +3,10 @@ import { Theme, css } from '@emotion/react';
 export const Wrapper = (isOpen: boolean) =>
   css`
     position: fixed;
-    top: 0;
-    right: ${isOpen ? '0' : '-100%'};
-    transition: right 0.3s ease;
-    width: 100%;
-    height: 100%;
+    margin-left: ${isOpen ? '0' : '37.5rem'};
+    transition: margin-left 0.3s ease;
+    width: 37.5rem;
+    height: 100vh;
     z-index: 2;
   `;
 
@@ -26,7 +25,7 @@ export const MainList = (theme: Theme) =>
     flex-direction: column;
     gap: 3.1rem;
     overflow-y: scroll;
-    height: calc(100% - 6.2rem - 13.4rem);
+    height: calc(100vh - 6.2rem - 13.4rem);
     padding: 4.8rem 3rem 0;
     background-color: ${theme.colors.white};
   `;
@@ -67,9 +66,9 @@ export const SubList =
     `;
 
 export const BottomSection = css`
-  position: fixed;
+  position: absolute;
   bottom: 0;
-  width: 100%;
+  width: 37.5rem;
 `;
 
 export const SearchBox = (theme: Theme) =>
