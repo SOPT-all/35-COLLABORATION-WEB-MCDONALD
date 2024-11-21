@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as S from './Header.style';
 import { BtnMenu, CmpBtnBack, ImgHeaderLogo } from '@assets/svgs';
+import SideBar from '@components/SideBar/SideBar';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -39,6 +40,7 @@ const Header = () => {
         )}
         <BtnMenu onClick={toggleSidebar} width={74} height={62} />
       </header>
+      <SideBar isOpen={isOpen} toggleSidebar={toggleSidebar} />
     </>
   );
 };

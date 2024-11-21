@@ -9,6 +9,7 @@ export const HeaderContainer = (isLine: boolean) => (theme: Theme) =>
     top: 0;
     width: 37.5rem;
     height: 6.2rem;
+    box-sizing: content-box;
     background-color: ${theme.colors.white};
     border-bottom: ${isLine ? `1px solid ${theme.colors.gray100}` : 'none'};
     transition: border-bottom 0.3s ease;
