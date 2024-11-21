@@ -32,14 +32,14 @@ const theme = {
       fontSize: '44px',
       fontWeight: 900,
       lineHeight: 'normal',
-      letterSpacing: '0%',
+      letterSpacing: '0',
     },
     headline02: {
       fontFamily: 'Apple SD Gothic Neo',
       fontSize: '38px',
       fontWeight: 900,
       lineHeight: '1.4px',
-      letterSpacing: '-1%',
+      letterSpacing: '0',
     },
 
     title01: {
@@ -54,7 +54,7 @@ const theme = {
       fontSize: '30px',
       fontWeight: 900,
       lineHeight: 'normal',
-      letterSpacing: '0%',
+      letterSpacing: '0',
     },
     title03: {
       fontFamily: 'Apple SD Gothic Neo',
@@ -89,7 +89,7 @@ const theme = {
       fontSize: '14px',
       fontWeight: 400,
       lineHeight: 'normal',
-      letterSpacing: '0%',
+      letterSpacing: '0',
     },
 
     body01: {
@@ -97,14 +97,14 @@ const theme = {
       fontSize: '16px',
       fontWeight: 900,
       lineHeight: 'normal',
-      letterSpacing: '0%',
+      letterSpacing: '0',
     },
     body02: {
       fontFamily: 'Apple SD Gothic Neo',
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 'normal',
-      letterSpacing: '0%',
+      letterSpacing: '0',
     },
     body03: {
       fontFamily: 'Apple SD Gothic Neo',
@@ -125,7 +125,7 @@ const theme = {
       fontSize: '15px',
       fontWeight: 400,
       lineHeight: '170%',
-      letterSpacing: '0%',
+      letterSpacing: '0',
     },
     body06: {
       fontFamily: 'Apple SD Gothic Neo',
@@ -146,14 +146,14 @@ const theme = {
       fontSize: '14px',
       fontWeight: 200,
       lineHeight: 'normal',
-      letterSpacing: '0%',
+      letterSpacing: '0',
     },
     body09: {
       fontFamily: 'Apple SD Gothic Neo',
       fontSize: '14px',
       fontWeight: 500,
       lineHeight: 'normal',
-      letterSpacing: '0%',
+      letterSpacing: '0',
     },
     body10: {
       fontFamily: 'Apple SD Gothic Neo',
@@ -167,7 +167,7 @@ const theme = {
       fontSize: '11px',
       fontWeight: 200,
       lineHeight: 'normal',
-      letterSpacing: '0%',
+      letterSpacing: '0',
     },
 
     caption01: {
