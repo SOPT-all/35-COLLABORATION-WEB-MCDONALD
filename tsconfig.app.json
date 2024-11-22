@@ -6,6 +6,7 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "jsxImportSource": "@emotion/react",
 
     /* Bundler mode */
     "moduleResolution": "Bundler",
@@ -35,5 +36,5 @@
       "@layouts/*": ["src/layouts/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "custom.d.ts"]
 }
