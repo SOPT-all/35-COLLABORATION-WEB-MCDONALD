@@ -11,5 +11,7 @@ export const ButtonContainer =
     border: 1px solid ${theme.colors.red01};
     color: ${isHighlighted ? theme.colors.white : theme.colors.red02};
     ${theme.fonts.body09};
-    background-color: ${isHighlighted ? theme.colors.red02 : ''};
+    background-color: ${isHighlighted
+      ? theme.colors.red02
+      : theme.colors.white};
   `;

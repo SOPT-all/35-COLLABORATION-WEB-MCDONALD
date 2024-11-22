@@ -6,7 +6,7 @@ type ButtonProps = {
 };
 
 const FilterButton = ({ menuTitle, isHighlighted = false }: ButtonProps) => (
-  <div css={S.ButtonContainer(isHighlighted)}>{menuTitle}</div>
+  <button css={S.ButtonContainer(isHighlighted)}>{menuTitle}</button>
 );
 
 export default FilterButton;
