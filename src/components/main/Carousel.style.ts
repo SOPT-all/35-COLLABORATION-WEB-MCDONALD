@@ -9,7 +9,6 @@ export const CarouselLayout = () => css`
 
 export const CarouselStyle = () => css`
   display: flex;
-  gap: -1rem;
   overflow: hidden;
 `;
 

@@ -2,6 +2,7 @@ import { useRef, useEffect, useState } from 'react';
 import { IcNext, IcPrev } from '@assets/svgs';
 import * as S from './Carousel.style';
 import { carousel } from '@constants/main/mcLiveList';
+import Progress from './Progress';
 
 const Carousel = () => {
   const containerRef = useRef<HTMLUListElement>(null);
@@ -63,15 +64,18 @@ const Carousel = () => {
       />
       <ul css={S.CarouselStyle} ref={containerRef}>
         {infiniteCarousel.map((item, index) => (
-          <li key={index} css={S.CarouselItemStyle}>
-            {item.img}
-          </li>
+          <>
+            <li key={index} css={S.CarouselItemStyle}>
+              {item.img}
+            </li>
+          </>
         ))}
       </ul>
       <IcNext
         css={S.ButtonStyle('right')}
         onClick={() => handleScroll('right')}
       />
+      <Progress currentIndex={currentIndex} />
     </section>
   );
 };
