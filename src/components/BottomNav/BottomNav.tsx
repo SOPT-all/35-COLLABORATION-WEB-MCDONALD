@@ -1,22 +1,22 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import * as S from './BottomNav.style';
 import { IcDeliver, IcLocation } from '@assets/svgs';
 
 const BottomNav = () => {
   const [isOpen, setIsOpen] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const lastScrollY = useRef(0); // 스크롤 위치 저장
 
   // 스크롤 방향 감지 함수
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     const currentScrollY = window.scrollY;
-    currentScrollY > lastScrollY ? setIsOpen(true) : setIsOpen(false);
-    setLastScrollY(currentScrollY);
-  };
+    setIsOpen(currentScrollY > lastScrollY.current);
+    lastScrollY.current = currentScrollY;
+  }, [isOpen]);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, [handleScroll]);
 
   return (
     <nav css={S.Container(isOpen)}>

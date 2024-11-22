@@ -1,2 +1,2 @@
-export { default as IcDeliver } from './IcDeliver';
-export { default as IcLocation } from './IcLocation';
+export { default as IcDeliver } from './bottomNav/IcDeliver';
+export { default as IcLocation } from './bottomNav/IcLocation';
