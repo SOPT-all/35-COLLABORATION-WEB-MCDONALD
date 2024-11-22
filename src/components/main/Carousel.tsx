@@ -1,45 +1,78 @@
-import { useState, useRef } from 'react';
-import { Cimg1, IcNext, IcPrev } from '@assets/svgs';
+import { useRef, useEffect, useState } from 'react';
+import { IcNext, IcPrev } from '@assets/svgs';
 import * as S from './Carousel.style';
 import { carousel } from '@constants/main/mcLiveList';
 
 const Carousel = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLUListElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const handleScroll = (direction: 'left' | 'right') => {
+  // 무한 캐러셀 배열
+  const infiniteCarousel = [
+    carousel[carousel.length - 1],
+    ...carousel,
+    carousel[0],
+  ];
+
+  // 초기 위치 설정
+  useEffect(() => {
     if (containerRef.current) {
       const scrollWidth = containerRef.current.offsetWidth;
-      const newIndex =
-        direction === 'left'
-          ? (currentIndex - 1 + carousel.length) % carousel.length
-          : (currentIndex + 1) % carousel.length;
-      setCurrentIndex(newIndex);
       containerRef.current.scrollTo({
-        left: newIndex * scrollWidth,
-        behavior: 'smooth',
+        left: scrollWidth,
+        behavior: 'auto',
       });
     }
+  }, []);
+
+  const handleScroll = (direction: 'left' | 'right') => {
+    if (!containerRef.current) return;
+
+    const scrollWidth = containerRef.current.offsetWidth;
+    const carouselCount = carousel.length;
+    const newIndex = direction === 'left' ? currentIndex - 1 : currentIndex + 1;
+    containerRef.current.scrollTo({
+      left: (newIndex + 1) * scrollWidth,
+      behavior: 'smooth',
+    });
+
+    setTimeout(() => {
+      if (newIndex === -1) {
+        setCurrentIndex(carouselCount - 1);
+        containerRef.current?.scrollTo({
+          left: carouselCount * scrollWidth,
+          behavior: 'auto',
+        });
+      } else if (newIndex === carouselCount) {
+        setCurrentIndex(0);
+        containerRef.current?.scrollTo({
+          left: scrollWidth,
+          behavior: 'auto',
+        });
+      } else {
+        setCurrentIndex(newIndex);
+      }
+    }, 500);
   };
 
   return (
-    <div css={S.CarouselLayout}>
+    <section css={S.CarouselLayout}>
       <IcPrev
         css={S.ButtonStyle('left')}
         onClick={() => handleScroll('left')}
       />
-      <div css={S.CarouselStyle} ref={containerRef}>
-        {carousel.map((item) => (
-          <div key={item.id} css={S.CarouselItemStyle}>
+      <ul css={S.CarouselStyle} ref={containerRef}>
+        {infiniteCarousel.map((item, index) => (
+          <li key={index} css={S.CarouselItemStyle}>
             {item.img}
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
       <IcNext
         css={S.ButtonStyle('right')}
         onClick={() => handleScroll('right')}
       />
-    </div>
+    </section>
   );
 };
 
