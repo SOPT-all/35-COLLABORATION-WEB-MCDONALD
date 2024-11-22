@@ -4,6 +4,8 @@ import { css } from '@emotion/react';
 export const footerStyle = (theme: Theme) => css`
   display: flex;
   flex-direction: column;
+  position: relative;
+  transform: translateY(-100%);
   width: 37.5rem;
   height: 62.4rem;
   background-color: ${theme.colors.gray700};
@@ -17,6 +19,9 @@ export const footerStyle = (theme: Theme) => css`
     margin: 3.3rem 1.5rem 0 1.5rem;
     align-items: center;
     border-bottom: 0.1rem solid ${theme.colors.gray500};
+  }
+
+  & form div {
     ${theme.fonts.body09}
   }
 
@@ -54,10 +59,9 @@ export const footerStyle = (theme: Theme) => css`
   }
 
   & .copyright {
-    display: inline-flex;
     margin-left: 1.5rem;
     margin-right: 1.5rem;
-    padding: 3rem 15.6rem 4rem 0;
+    padding: 3rem 15.6rem 0 0;
     ${theme.fonts.body11}
     color: ${theme.colors.gray300};
   }
@@ -69,9 +73,43 @@ export const footerStyle = (theme: Theme) => css`
     gap: 1.7rem;
   }
 
-  & .webIsms {
+  & .imgFooterIsms {
     width: 60px;
     height: 60px;
     border-radius: 0.6rem;
+  }
+
+  & .bottomRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 26.8rem;
+    color: ${theme.colors.white};
+    font-family: 'Apple SD Gothic Neo';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 140%; /* 16.8px */
+  }
+
+  & .icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.8rem 2.3rem 0 2.4rem;
+    gap: 3.1rem;
+  }
+
+  & .icFacebook,
+  .icInstagram,
+  .icYoutube,
+  .icKakaostory {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  & .imgFooterWa {
+    width: 4.4rem;
+    height: 3.1rem;
   }
 `;

@@ -1,11 +1,9 @@
 import { SpacingBox } from './Spacing.style';
 
-interface SpacingPropTypes {
+interface SpacingProps {
   size: string;
 }
 
-const Spacing = ({ size }: SpacingPropTypes) => (
-  <div css={SpacingBox(size)}></div>
-);
+const Spacing = ({ size }: SpacingProps) => <div css={SpacingBox(size)}></div>;
 
 export default Spacing;
