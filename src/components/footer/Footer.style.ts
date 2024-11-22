@@ -22,18 +22,15 @@ export const footerStyle = (theme: Theme) => css`
   }
 
   & form div {
+    width: 17.2rem;
+    height: 3.6rem;
+    padding: 0.775rem 0;
     ${theme.fonts.body09}
+    color: ${theme.colors.white};
   }
 
   & form .highlightMenu {
     color: ${theme.colors.yellow01};
-  }
-
-  & form div {
-    width: 17.2rem;
-    height: 3.6rem;
-    padding: 0.775rem 0;
-    color: ${theme.colors.white};
   }
 
   & form .bottomMenu {
@@ -52,10 +49,10 @@ export const footerStyle = (theme: Theme) => css`
   }
 
   & .middle p {
-    ${theme.fonts.body08}
-    color: ${theme.colors.gray300};
     padding-top: 0.1rem;
     padding-bottom: 0.2rem;
+    ${theme.fonts.body08}
+    color: ${theme.colors.gray300};
   }
 
   & .copyright {
@@ -84,12 +81,8 @@ export const footerStyle = (theme: Theme) => css`
     flex-direction: column;
     justify-content: center;
     width: 26.8rem;
+    ${theme.fonts.body11}
     color: ${theme.colors.white};
-    font-family: 'Apple SD Gothic Neo';
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 200;
-    line-height: 140%; /* 16.8px */
   }
 
   & .icons {

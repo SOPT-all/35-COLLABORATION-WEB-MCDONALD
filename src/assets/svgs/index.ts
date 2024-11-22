@@ -1,6 +1,6 @@
-export { default as ImgFooterWa } from './ImgFooterWa';
-export { default as IcFacebook } from './IcFacebook';
-export { default as IcInstagram } from './IcInstagram';
-export { default as IcKakaostory } from './IcKakaostory';
-export { default as IcYoutube } from './IcYoutube';
-export { default as ImgFooterIsms } from './ImgFooterIsms';
+export { default as ImgFooterWa } from './footer/ImgFooterWa';
+export { default as IcFacebook } from './footer/IcFacebook';
+export { default as IcInstagram } from './footer/IcInstagram';
+export { default as IcKakaostory } from './footer/IcKakaostory';
+export { default as IcYoutube } from './footer/IcYoutube';
+export { default as ImgFooterIsms } from './footer/ImgFooterIsms';
