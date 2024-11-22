@@ -65,7 +65,7 @@ const Carousel = () => {
       <ul css={S.CarouselStyle} ref={containerRef}>
         {infiniteCarousel.map((item, index) => (
           <>
-            <li key={index} css={S.CarouselItemStyle}>
+            <li key={`${item.id}-${index}`} css={S.CarouselItemStyle}>
               {item.img}
             </li>
           </>
@@ -75,7 +75,7 @@ const Carousel = () => {
         css={S.ButtonStyle('right')}
         onClick={() => handleScroll('right')}
       />
-      <Progress currentIndex={currentIndex} />
+      <Progress currentIndex={currentIndex} handleScroll={handleScroll} />
     </section>
   );
 };
