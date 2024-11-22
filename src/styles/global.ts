@@ -1,6 +1,6 @@
-import { css, Theme } from "@emotion/react";
+import { css, Theme } from '@emotion/react';
 
-import Reset from "./reset";
+import Reset from './reset';
 
 const GlobalStyle = (theme: Theme) => css`
   ${Reset}
@@ -8,7 +8,7 @@ const GlobalStyle = (theme: Theme) => css`
   * {
     box-sizing: border-box;
   }
-  
+
   html,
   body {
     display: flex;
@@ -18,9 +18,9 @@ const GlobalStyle = (theme: Theme) => css`
     font-size: 62.5%;
   }
 
-  #root { 
+  #root {
     width: 375px;
   }
 `;
 
-export default GlobalStyle
+export default GlobalStyle;

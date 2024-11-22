@@ -1,0 +1,14 @@
+export { default as Cimg1 } from './carousel/Cimg1';
+export { default as Cimg10 } from './carousel/Cimg10';
+export { default as Cimg2 } from './carousel/Cimg2';
+export { default as Cimg3 } from './carousel/Cimg3';
+export { default as Cimg4 } from './carousel/Cimg4';
+export { default as Cimg5 } from './carousel/Cimg5';
+export { default as Cimg6 } from './carousel/Cimg6';
+export { default as Cimg7 } from './carousel/Cimg7';
+export { default as Cimg8 } from './carousel/Cimg8';
+export { default as Cimg9 } from './carousel/Cimg9';
+export { default as IcNext } from './carousel/IcNext';
+export { default as IcPlay } from './carousel/IcPlay';
+export { default as IcPrev } from './carousel/IcPrev';
+export { default as IcStop } from './carousel/IcStop';
