@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as S from './Header.style';
@@ -45,4 +46,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default React.memo(Header);

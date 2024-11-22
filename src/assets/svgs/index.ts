@@ -1,6 +1,6 @@
-export { default as BtnAccordion } from './BtnAccordion';
-export { default as BtnMenu } from './BtnMenu';
-export { default as BtnX } from './BtnX';
-export { default as CmpBtnBack } from './CmpBtnBack';
-export { default as IcSearch } from './IcSearch';
-export { default as ImgHeaderLogo } from './ImgHeaderLogo';
+export { default as BtnAccordion } from './sidebar/BtnAccordion';
+export { default as BtnMenu } from './header/BtnMenu';
+export { default as BtnX } from './sidebar/BtnX';
+export { default as CmpBtnBack } from './header/CmpBtnBack';
+export { default as IcSearch } from './sidebar/IcSearch';
+export { default as ImgHeaderLogo } from './header/ImgHeaderLogo';

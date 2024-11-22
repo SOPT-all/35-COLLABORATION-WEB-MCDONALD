@@ -1,14 +1,22 @@
 import { Theme, css } from '@emotion/react';
 
-export const Wrapper = (isOpen: boolean) =>
-  css`
-    position: absolute;
-    margin-left: ${isOpen ? '0' : '100%'};
-    transition: margin-left 0.3s ease;
-    width: 100%;
-    height: 100vh;
-    z-index: 2;
-  `;
+export const Wrapper = (isOpen: boolean) => css`
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+  width: 37.5rem;
+  height: 100vh;
+  z-index: 2;
+
+  visibility: ${isOpen ? 'visible' : 'hidden'};
+  transition: visibility 0s ${isOpen ? '0s' : '0.3s'};
+`;
+
+export const Container = (isOpen: boolean) => css`
+  margin-left: ${isOpen ? '0' : '100%'};
+  transition: margin-left 0.3s ease;
+  width: 100%;
+`;
 
 export const CloseBtn = (theme: Theme) => css`
   display: flex;
@@ -35,9 +43,7 @@ export const MainListTitle = (theme: Theme) =>
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     padding-bottom: 1.8rem;
-    background: transparent;
     border-bottom: 1px solid ${theme.colors.gray100};
 
     ${theme.fonts.title01};
