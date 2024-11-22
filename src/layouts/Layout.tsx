@@ -1,4 +1,3 @@
-import Footer from '@components/footer/Footer';
 import { Outlet } from 'react-router-dom';
 
 const Layout = () => (
@@ -6,8 +5,6 @@ const Layout = () => (
     <div style={{ height: '100%' }}>
       <Outlet />
     </div>
-
-    <Footer />
   </>
 );
 
