@@ -4,8 +4,6 @@ interface SpacingProps {
   size: string;
 }
 
-const Spacing = ({ size }: SpacingProps) => (
-  <div css={SpacingBox(size)}></div>
-);
+const Spacing = ({ size }: SpacingProps) => <div css={SpacingBox(size)}></div>;
 
 export default Spacing;

@@ -1,5 +1,4 @@
 import { Theme, css } from '@emotion/react';
-import theme from 'src/styles/theme';
 
 export const postStyleContainer = (theme: Theme) => css`
   display: flex;
@@ -10,7 +9,7 @@ export const postStyleContainer = (theme: Theme) => css`
   align-items: center;
   gap: 1.2rem;
   flex-shrink: 0;
-  border-radius: 0.5rem;
+  border-radius: 5px;
   background-color: ${theme.colors.gray000};
 `;
 export const imageSection = css`

@@ -1,6 +1,6 @@
-import { css, Theme } from "@emotion/react";
+import { css, Theme } from '@emotion/react';
 
-import Reset from "./reset";
+import Reset from './reset';
 
 const GlobalStyle = (theme: Theme) => css`
   ${Reset}

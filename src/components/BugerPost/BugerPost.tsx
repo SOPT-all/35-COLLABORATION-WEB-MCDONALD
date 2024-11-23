@@ -1,29 +1,13 @@
-import { ImgMenu1 } from '@assets/svgs/buger';
-import {
-  postStyleContainer,
-  titleSection,
-  imageSection,
-} from './BugerPost.style';
-import { ThemeProvider } from '@emotion/react';
-import theme from 'src/styles/theme';
+import * as S from '../BurgerPost/BugerPost.style';
 
-type BugerPostProps = {
-  titleKo: string;
-  titleEn: string;
+type Props = {
+  title: string;
 };
 
-const BurgerPost = ({ titleEn, titleKo }: BugerPostProps) => (
-  <ThemeProvider theme={theme}>
-    <div css={postStyleContainer}>
-      <section css={imageSection}>
-        <ImgMenu1 />
-      </section>
-      <section css={titleSection}>
-        <p className="title__ko">{titleKo}</p>
-        <p className="title__en">{titleEn}</p>
-      </section>
-    </div>
-  </ThemeProvider>
+const BurgerPost = ({ title }: Props) => (
+  <div css={S.postStyleContainer}>
+    <h1>{title}</h1>
+  </div>
 );
 
 export default BurgerPost;
