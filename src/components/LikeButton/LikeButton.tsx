@@ -1,9 +1,27 @@
+import { useState } from 'react';
+import { BtnHeart, IcHeartDisabled } from '@assets/svgs';
+import * as S from './LikeButton.style';
+
 type LikeButtonProps = {
-  favorite: boolean;
+  isClicked?: boolean;
 };
 
-const LikeButton = ({ favorite = false }: LikeButtonProps) => (
-  <div>LikeButton</div>
-);
+const LikeButton = ({ isClicked = false }: LikeButtonProps) => {
+  const [isFavorite, setIsFavorite] = useState(isClicked);
+
+  const toggleFavorite = () => {
+    setIsFavorite((prev) => !prev);
+  };
+
+  return (
+    <div onClick={toggleFavorite} style={{ cursor: 'pointer' }}>
+      {isFavorite ? (
+        <BtnHeart css={S.LikeButton(true)} />
+      ) : (
+        <IcHeartDisabled css={S.LikeButton(false)} />
+      )}
+    </div>
+  );
+};
 
 export default LikeButton;

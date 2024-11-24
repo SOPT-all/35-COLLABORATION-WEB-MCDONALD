@@ -1,3 +1,5 @@
+export { default as BtnHeart } from './likeButton/BtnHeart';
+export { default as IcHeartDisabled } from './likeButton/IcHeartDisabled';
 export { default as ImgMenu1 } from './burger/ImgMenu1';
 export { default as ImgMenu10 } from './burger/ImgMenu10';
 export { default as ImgMenu2 } from './burger/ImgMenu2';

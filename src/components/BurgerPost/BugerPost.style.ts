@@ -13,6 +13,7 @@ export const postStyleContainer = (theme: Theme) => css`
   background-color: ${theme.colors.gray000};
 `;
 export const imageSection = css`
+  position: relative;
   display: flex;
   height: 11rem;
   justify-content: center;

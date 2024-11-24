@@ -6,6 +6,7 @@ import {
 } from './BugerPost.style';
 import { ThemeProvider } from '@emotion/react';
 import theme from 'src/styles/theme';
+import LikeButton from '@components/LikeButton/LikeButton';
 
 type BugerPostProps = {
   titleKo: string;
@@ -17,6 +18,7 @@ const BurgerPost = ({ titleEn, titleKo }: BugerPostProps) => (
     <div css={postStyleContainer}>
       <section css={imageSection}>
         <ImgMenu1 />
+        <LikeButton isClicked={false} />
       </section>
       <section css={titleSection}>
         <p className="title__ko">{titleKo}</p>
