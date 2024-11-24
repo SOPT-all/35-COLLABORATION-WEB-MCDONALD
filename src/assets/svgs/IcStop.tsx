@@ -1,5 +1,6 @@
+import * as React from 'react';
 import type { SVGProps } from 'react';
-const SvgIcPlay = (props: SVGProps<SVGSVGElement>) => (
+const SvgIcStop = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
@@ -8,9 +9,10 @@ const SvgIcPlay = (props: SVGProps<SVGSVGElement>) => (
   >
     <circle cx={14.5} cy={14.582} r={12.438} fill="#F5BD44" />
     <path
-      fill="#fff"
-      d="M17.681 14.236a.4.4 0 0 1 0 .692L13.21 17.51a.4.4 0 0 1-.6-.346V12a.4.4 0 0 1 .6-.346z"
+      stroke="#fff"
+      strokeLinecap="round"
+      d="M12.5 11.645v5.25M16.5 11.645v5.25"
     />
   </svg>
 );
-export default SvgIcPlay;
+export default SvgIcStop;
