@@ -1,4 +1,4 @@
-export const calculateLine = (element: HTMLDivElement): number => {
+export const calculateLine = (element: HTMLParagraphElement): number => {
   if (!element) return 0;
 
   const computedStyle = getComputedStyle(element);
@@ -10,6 +10,8 @@ export const calculateLine = (element: HTMLDivElement): number => {
 
   const height = element.offsetHeight;
   const lines = Math.ceil(height / lineHeight);
+
+  console.log(lineHeight, height, lines);
 
   return lines;
 };
