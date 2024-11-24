@@ -34,7 +34,7 @@ export const ProgressBar = (isPlay: boolean) => (theme: Theme) => css`
     background-color: ${theme.colors.yellow02};
     border-radius: 2px;
 
-    ${isPlay ? 'animation: fill 5s linear forwards;' : 'animation: none;'}
+    animation: ${isPlay ? 'fill 5s linear forwards;' : 'none'};
   }
 
   @keyframes fill {

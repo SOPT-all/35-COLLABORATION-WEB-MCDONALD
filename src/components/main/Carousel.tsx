@@ -64,11 +64,9 @@ const Carousel = () => {
       />
       <ul css={S.CarouselStyle} ref={containerRef}>
         {infiniteCarousel.map((item, index) => (
-          <>
-            <li key={`${item.id}-${index}`} css={S.CarouselItemStyle}>
-              {item.img}
-            </li>
-          </>
+          <li key={`${item.id}-${index}`} css={S.CarouselItemStyle}>
+            {item.img}
+          </li>
         ))}
       </ul>
       <IcNext
