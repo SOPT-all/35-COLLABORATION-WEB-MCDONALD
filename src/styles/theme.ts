@@ -188,6 +188,7 @@ const theme = {
 };
 
 export type ColorType = typeof theme.colors;
+export type BoxShadowType = typeof theme.boxShadows;
 export type FontType = typeof theme.fonts;
 
 export default theme;
