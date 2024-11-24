@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as S from './SideBar.style';
 import { BtnAccordion, BtnX, IcSearch } from '@assets/svgs';
 import { SIDEBAR_LIST } from '@constants/sidebarList';
@@ -71,4 +71,4 @@ const SideBar = ({ isOpen, toggleSidebar }: SidebarProps) => {
   );
 };
 
-export default SideBar;
+export default React.memo(SideBar);
