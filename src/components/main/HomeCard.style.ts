@@ -57,7 +57,24 @@ export const SkeletonText = (theme: Theme) => css`
   padding: 1.8rem 2rem 1.8rem 1.5rem;
 
   p {
+    position: relative;
+    display: block;
+    width: 13.1rem;
+    height: fit-content;
+
+    color: transparent;
+    ${theme.fonts.title07};
+    overflow: auto;
+  }
+
+  p::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 13.1rem;
     height: 1.8rem;
+
     background: linear-gradient(
       90deg,
       ${theme.colors.gray100} 0%,
@@ -65,8 +82,9 @@ export const SkeletonText = (theme: Theme) => css`
       ${theme.colors.gray100} 100%
     );
     background-size: 10rem;
-    animation: ${shimmer} 1s infinite;
     border-radius: 8px;
+
+    animation: ${shimmer} 1s infinite;
   }
 `;
 

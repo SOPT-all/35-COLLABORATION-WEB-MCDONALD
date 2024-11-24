@@ -33,7 +33,7 @@ const HomeCard = ({ img, title }: HomeCardProps) => {
             : S.SkeletonText
         }
       >
-        <p ref={titleRef}>{isCalculated && isDataValid ? title : ''}</p>
+        <p ref={titleRef}>{title}</p>
       </div>
     </section>
   );
