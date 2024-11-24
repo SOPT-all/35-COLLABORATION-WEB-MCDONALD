@@ -10,20 +10,30 @@ export interface HomeCardProps {
 const HomeCard = ({ img, title }: HomeCardProps) => {
   const titleRef = useRef<HTMLParagraphElement>(null);
   const [isThreeLines, setIsThreeLines] = useState(false);
+  const [isCalculated, setIsCalculated] = useState(false);
+  const isDataValid = img && title;
 
   useEffect(() => {
     if (titleRef.current) {
       const lines = calculateLine(titleRef.current);
       setIsThreeLines(lines >= 3);
-      setIsReady(true);
+      setIsCalculated(true);
     }
   }, [title]);
 
   return (
     <section css={S.CardStyle}>
-      <div css={S.ImgStyle}>{img}</div>
-      <div css={S.TitleStyle(isThreeLines)}>
-        <p ref={titleRef}>{title}</p>
+      <div css={S.ImgStyle}>
+        {isCalculated && isDataValid ? img : <div css={S.SkeletonImg} />}
+      </div>
+      <div
+        css={
+          isCalculated && isDataValid
+            ? S.TitleStyle(isThreeLines)
+            : S.SkeletonText
+        }
+      >
+        <p ref={titleRef}>{isCalculated && isDataValid ? title : ''}</p>
       </div>
     </section>
   );
