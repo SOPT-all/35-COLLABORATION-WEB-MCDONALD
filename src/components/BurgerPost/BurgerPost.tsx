@@ -1,4 +1,4 @@
-import { ImgMenu1 } from '@assets/svgs/buger';
+import { ImgMenu1 } from '@assets/svgs';
 import {
   postStyleContainer,
   titleSection,
