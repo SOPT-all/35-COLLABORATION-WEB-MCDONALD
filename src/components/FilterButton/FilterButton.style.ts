@@ -7,7 +7,7 @@ export const ButtonContainer =
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    border-radius: 0.8rem;
+    border-radius: 8px;
     border: 1px solid ${theme.colors.red01};
     color: ${isHighlighted ? theme.colors.white : theme.colors.red02};
     ${theme.fonts.body09};
