@@ -16,9 +16,9 @@ const LikeButton = ({ isClicked = false }: LikeButtonProps) => {
   return (
     <div onClick={toggleFavorite} style={{ cursor: 'pointer' }}>
       {isFavorite ? (
-        <BtnHeart css={S.LikeButton(true)} />
+        <BtnHeart css={S.LikeButton} />
       ) : (
-        <IcHeartDisabled css={S.LikeButton(false)} />
+        <IcHeartDisabled css={S.LikeButton} />
       )}
     </div>
   );

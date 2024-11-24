@@ -1,6 +1,6 @@
-import { Theme, css } from '@emotion/react';
+import { css } from '@emotion/react';
 
-export const LikeButton = (isClicked: boolean) => (theme: Theme) => css`
+export const LikeButton = () => css`
   display: flex;
   width: 2.4rem;
   height: 2.4rem;
