@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import * as S from './BottomNav.style';
-import { IcDeliver, IcLocation } from '@assets/svgs';
+import { IcDeliver, IcLocation } from '@assets/svgs/bottomNav';
 
 const BottomNav = () => {
   const [isOpen, setIsOpen] = useState(true);
