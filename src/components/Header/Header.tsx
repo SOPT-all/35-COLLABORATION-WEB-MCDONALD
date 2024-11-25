@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import * as S from './Header.style';
-import { BtnMenu, CmpBtnBack, ImgHeaderLogo } from '@assets/svgs/header';
+import { BtnMenu, BtnX, CmpBtnBack, ImgHeaderLogo } from '@assets/svgs/header';
 import SideBar from '@components/SideBar/SideBar';
 
 const Header = () => {
+  const location = useLocation();
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [isLine, setIsLine] = useState(false);
@@ -25,7 +26,13 @@ const Header = () => {
   }, []);
 
   // 상세 페이지 확인
-  const isDetailPage = false; // 라우팅 설정 후 pathname에 따라 상세페이지면 true가 되게끔 수정 예정
+  const isDetailPage = location.pathname.startsWith('/details');
+
+  // 메인 페이지 이동
+  const navMain = () => {
+    navigate('/');
+    setIsOpen(false);
+  };
 
   return (
     <>
@@ -36,9 +43,14 @@ const Header = () => {
             <span>List</span>
           </section>
         ) : (
-          <ImgHeaderLogo width={74} height={62} />
+          <ImgHeaderLogo width={74} height={62} onClick={navMain} />
         )}
-        <BtnMenu onClick={toggleSidebar} width={74} height={62} />
+
+        {isOpen ? (
+          <BtnX onClick={toggleSidebar} width={74} height={62} />
+        ) : (
+          <BtnMenu onClick={toggleSidebar} width={74} height={62} />
+        )}
       </header>
       <SideBar isOpen={isOpen} toggleSidebar={toggleSidebar} />
     </>

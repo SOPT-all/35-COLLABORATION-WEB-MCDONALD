@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import * as S from './SideBar.style';
-import { BtnAccordion, BtnX, IcSearch } from '@assets/svgs/sidebar';
+import { BtnAccordion, IcSearch } from '@assets/svgs/sidebar';
 import { SIDEBAR_LIST } from '@constants/sidebarList';
 
 interface SidebarProps {
@@ -9,10 +10,17 @@ interface SidebarProps {
 }
 
 const SideBar = ({ isOpen, toggleSidebar }: SidebarProps) => {
+  const navigate = useNavigate();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleSubMenu = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
+  };
+
+  // 목록 페이지 이동
+  const navList = () => {
+    navigate('/list');
+    toggleSidebar();
   };
 
   // 외부 화면 스크롤 방지
@@ -29,12 +37,8 @@ const SideBar = ({ isOpen, toggleSidebar }: SidebarProps) => {
   }, [isOpen]);
 
   return (
-    <div css={S.Wrapper(isOpen)}>
+    <nav css={S.Wrapper}>
       <div css={S.Container(isOpen)}>
-        <button css={S.CloseBtn}>
-          <BtnX onClick={toggleSidebar} width={62} height={62} />
-        </button>
-
         <ul css={S.MainList}>
           {SIDEBAR_LIST.map((item, index) => (
             <li key={index}>
@@ -46,7 +50,9 @@ const SideBar = ({ isOpen, toggleSidebar }: SidebarProps) => {
               {item.subItems.length > 0 && (
                 <ul css={S.SubList({ isSubListOpen: openIndex === index })}>
                   {item.subItems.map((subItem, subIndex) => (
-                    <li key={subIndex}>{subItem}</li>
+                    <li key={subIndex} onClick={navList}>
+                      {subItem}
+                    </li>
                   ))}
                 </ul>
               )}
@@ -67,7 +73,7 @@ const SideBar = ({ isOpen, toggleSidebar }: SidebarProps) => {
           </ul>
         </section>
       </div>
-    </div>
+    </nav>
   );
 };
 
