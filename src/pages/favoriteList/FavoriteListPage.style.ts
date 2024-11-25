@@ -14,3 +14,13 @@ export const Banner = (theme: Theme) => css`
     ${theme.fonts.headline01};
   }
 `;
+
+export const ProductCount = (theme: Theme) => css`
+  padding: 0 1.5rem 7rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 3.8rem;
+  color: ${theme.colors.gray700};
+  ${theme.fonts.title06};
+`;
