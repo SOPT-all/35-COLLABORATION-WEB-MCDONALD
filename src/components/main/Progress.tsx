@@ -1,4 +1,4 @@
-import { IcPlay, IcStop } from '@assets/svgs';
+import { IcPlay, IcStop } from '@assets/svgs/carousel';
 import * as S from './Progress.style';
 import { useEffect, useRef, useState } from 'react';
 

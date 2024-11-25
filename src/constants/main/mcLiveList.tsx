@@ -9,7 +9,7 @@ import {
   Cimg8,
   Cimg9,
   Cimg10,
-} from '@assets/svgs';
+} from '@assets/svgs/carousel';
 
 export const carousel = [
   { id: 1, img: <Cimg1 /> },
