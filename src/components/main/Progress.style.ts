@@ -22,7 +22,6 @@ export const ProgressBar = (isPlay: boolean) => (theme: Theme) => css`
   height: 0.4rem;
   border-radius: 2px;
   background-color: ${theme.colors.white};
-  z-index: 1;
 
   &::after {
     content: '';
