@@ -26,7 +26,6 @@ export const ButtonStyle = (position: string) => css`
   position: absolute;
   top: 50%;
   ${position}: 0;
-  z-index: 1;
   width: 3rem;
   height: 3rem;
 
