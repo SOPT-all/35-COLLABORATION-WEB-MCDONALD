@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import * as S from './SideBar.style';
-import { BtnAccordion, BtnX, IcSearch } from '@assets/svgs';
+import { BtnAccordion, BtnX, IcSearch } from '@assets/svgs/sidebar';
 import { SIDEBAR_LIST } from '@constants/sidebarList';
 
 interface SidebarProps {

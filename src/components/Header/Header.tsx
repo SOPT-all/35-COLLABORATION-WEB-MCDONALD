@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as S from './Header.style';
-import { BtnMenu, CmpBtnBack, ImgHeaderLogo } from '@assets/svgs';
+import { BtnMenu, CmpBtnBack, ImgHeaderLogo } from '@assets/svgs/header';
 import SideBar from '@components/SideBar/SideBar';
 
 const Header = () => {
