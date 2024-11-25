@@ -16,5 +16,3 @@ export { default as IcSearch } from './sidebar/IcSearch';
 export { default as ImgHeaderLogo } from './header/ImgHeaderLogo';
 export { default as IcDeliver } from './bottomNav/IcDeliver';
 export { default as IcLocation } from './bottomNav/IcLocation';
-export { default as Cimg12 } from './Cimg12';
-export { default as ListStyle } from './ListStyle';

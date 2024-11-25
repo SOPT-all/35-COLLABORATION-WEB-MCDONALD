@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import * as S from './BurgerListPage.style';
-import { Cimg12, ListStyle } from '@assets/svgs';
+import { Cimg12, ListStyle } from '@assets/svgs/burgerList';
 import FilterButton from '@components/FilterButton/FilterButton';
 import BurgerPost from '@components/BurgerPost/BurgerPost';
 import { CATEGORY_LIST, PRODUCT_TYPE } from '@constants/productFilter';
