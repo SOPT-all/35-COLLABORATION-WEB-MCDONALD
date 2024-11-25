@@ -11,7 +11,7 @@ import {
   Cimg10,
 } from '@assets/svgs/carousel';
 
-export const carousel = [
+export const CAROUSEL_LIST = [
   { id: 1, img: <Cimg1 /> },
   { id: 2, img: <Cimg2 /> },
   { id: 3, img: <Cimg3 /> },

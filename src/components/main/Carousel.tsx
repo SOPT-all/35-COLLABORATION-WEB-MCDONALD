@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from 'react';
 import { IcNext, IcPrev } from '@assets/svgs';
 import * as S from './Carousel.style';
-import { carousel } from '@constants/main/mcLiveList';
+import { CAROUSEL_LIST } from '@constants/main/mcLiveList';
 import Progress from './Progress';
 
 const Carousel = () => {
@@ -10,9 +10,9 @@ const Carousel = () => {
 
   // 무한 캐러셀 배열
   const infiniteCarousel = [
-    carousel[carousel.length - 1],
-    ...carousel,
-    carousel[0],
+    CAROUSEL_LIST[CAROUSEL_LIST.length - 1],
+    ...CAROUSEL_LIST,
+    CAROUSEL_LIST[0],
   ];
 
   // 초기 위치 설정
@@ -30,7 +30,7 @@ const Carousel = () => {
     if (!containerRef.current) return;
 
     const scrollWidth = containerRef.current.offsetWidth;
-    const carouselCount = carousel.length;
+    const carouselCount = CAROUSEL_LIST.length;
     const newIndex = direction === 'left' ? currentIndex - 1 : currentIndex + 1;
     containerRef.current.scrollTo({
       left: (newIndex + 1) * scrollWidth,
