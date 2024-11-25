@@ -1,13 +1,18 @@
-// Import Cimg11 from '@assets/svgs/Cimg11';
 import { useState } from 'react';
 import * as S from './BurgerDetailPage.style';
 import { Ellipse, Cimg11, IcMinus, IcPlus } from '@assets/svgs';
 
 const BurgerDetailPage = () => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number[]>([]);
 
   const toggle = (index: number) => {
-    setActiveIndex(activeIndex === index ? null : index);
+    if (activeIndex.includes(index)) {
+      // 이미 열려있으면 닫기
+      setActiveIndex(activeIndex.filter((i) => i !== index));
+    } else {
+      // 닫혀있으면 열기
+      setActiveIndex([...activeIndex, index]);
+    }
   };
 
   return (
@@ -22,7 +27,7 @@ const BurgerDetailPage = () => {
         </div>
       </div>
 
-      <div css={S.imgContainer}>
+      <div>
         <Ellipse css={S.ellipse} />
         <Cimg11 css={S.burgerImg} />
       </div>
@@ -36,15 +41,19 @@ const BurgerDetailPage = () => {
       </div>
 
       <ul>
-        <li css={S.nutrition} onClick={() => toggle(0)}>
-          <div className="toggle1">
+        <li css={S.nutrition}>
+          <div className="nutritionQuestion" onClick={() => toggle(0)}>
             <h4>영양정보</h4>
-            <IcPlus className="icPlus" />{' '}
-            {/*이 안에서 왜 width, height가 안 먹힐까*/}
-            <IcMinus className="icMinus" />
+            {activeIndex.includes(0) ? (
+              <IcMinus width={24} height={24} />
+            ) : (
+              <IcPlus width={24} height={24} />
+            )}
           </div>
 
-          <div className={`table ${activeIndex === 0 ? 'active' : ''}`}>
+          <div
+            className={`nutritionAnswer ${activeIndex.includes(0) ? 'active' : ''}`}
+          >
             <table>
               <thead>
                 <tr>
@@ -99,10 +108,19 @@ const BurgerDetailPage = () => {
           </div>
         </li>
 
-        <li css={S.allergy} onClick={() => toggle(1)}>
-          <h4>알레르기 정보</h4>
+        <li css={S.allergy}>
+          <div className="allergyQuestion" onClick={() => toggle(1)}>
+            <h4>알레르기 정보</h4>
+            {activeIndex.includes(1) ? (
+              <IcMinus width={24} height={24} />
+            ) : (
+              <IcPlus width={24} height={24} />
+            )}
+          </div>
 
-          <div className={`entireText ${activeIndex === 1 ? 'active' : ''}`}>
+          <div
+            className={`allergyAnswer ${activeIndex.includes(1) ? 'active' : ''}`}
+          >
             <div>
               <p className="first">알레르기 유발 가능 식재료</p>
               <p className="second">(난류,대두,밀,토마토,닭고기)</p>
@@ -112,24 +130,23 @@ const BurgerDetailPage = () => {
               있습니다.
             </p>
           </div>
-
-          <button>
-            <IcPlus />
-            <IcMinus />
-          </button>
         </li>
 
-        <li css={S.origin} onClick={() => toggle(2)}>
-          <h4>원산지 정보</h4>
+        <li css={S.origin}>
+          <div className="originQuestion" onClick={() => toggle(2)}>
+            <h4>원산지 정보</h4>
+            {activeIndex.includes(2) ? (
+              <IcMinus width={24} height={24} />
+            ) : (
+              <IcPlus width={24} height={24} />
+            )}
+          </div>
 
-          <p className={`${activeIndex === 2 ? 'active' : ''}`}>
-            닭고기:태국산(경상지역),국내산(그 외 지역)
-          </p>
-
-          <button>
-            <IcPlus />
-            <IcMinus />
-          </button>
+          <div
+            className={`originAnswer ${activeIndex.includes(2) ? 'active' : ''}`}
+          >
+            <p>닭고기:태국산(경상지역),국내산(그 외 지역)</p>
+          </div>
         </li>
       </ul>
     </main>

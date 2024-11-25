@@ -6,10 +6,6 @@ export const titleStyle = (theme: Theme) => css`
   padding-top: 12.7rem;
 
   .korean {
-    display: flex;
-    /* justify-content: center; */
-    flex-direction: column;
-    /* gap: 0.2rem; */
     ${theme.fonts.headline02}
     color: ${theme.colors.gray700};
     text-align: center;
@@ -25,12 +21,7 @@ export const titleStyle = (theme: Theme) => css`
   }
 `;
 
-export const imgContainer = css`
-  /* position: relative; */
-`;
-
 export const ellipse = css`
-  display: flex;
   position: absolute;
   left: 4rem;
   top: 19.2rem;
@@ -41,17 +32,10 @@ export const ellipse = css`
 export const burgerImg = css`
   display: flex;
   position: relative;
-  /* top: 29.5rem; */
   width: 34.6rem;
   margin: 0 auto;
-  /* height: 25.4rem; */
-  /* padding-top: 3.8rem; */
   z-index: 2;
 `;
-
-// Export const container = css`
-//   width: 34.3rem;
-// `;
 
 export const info = (theme: Theme) => css`
   display: flex;
@@ -66,17 +50,14 @@ export const info = (theme: Theme) => css`
 `;
 
 export const nutrition = (theme: Theme) => css`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
   padding-top: 7.2rem;
-  margin: 0 auto;
 
-  .toggle1 {
+  .nutritionQuestion {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 0.4rem 0 1.8rem;
+    border-bottom: 1px solid ${theme.colors.gray700};
   }
 
   h4 {
@@ -87,65 +68,63 @@ export const nutrition = (theme: Theme) => css`
     color: ${theme.colors.gray700};
   }
 
-  .icPlus {
-    width: 2.4rem;
-    height: 2.4rem;
-  }
-
-  .icMinus {
-    width: 2.4rem;
-    height: 2.4rem;
-  }
-
-  .table {
-    display: flex;
+  .nutritionAnswer {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
   }
 
-  .table.active {
-    max-height: 62.8rem; /* 적절한 크기 설정 */
+  .nutritionAnswer.active {
+    max-height: 62.8rem;
   }
 
-  & table {
-    display: flex;
-    flex-direction: column;
-    width: 34.3rem;
-    align-items: center;
+  table {
+    width: 100%;
     ${theme.fonts.body03}
     color: ${theme.colors.black};
   }
 
-  & tr {
-    display: flex;
+  td,
+  th {
+    width: 33.33%; /* 열을 균등하게 */
     padding: 2.05rem 0;
+    border-bottom: 1px solid ${theme.colors.gray200};
+    text-align: center;
   }
 `;
 
 export const allergy = (theme: Theme) => css`
-  width: 34.3rem;
+  .allergyQuestion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0.4rem 0 1.8rem;
+    border-bottom: 1px solid ${theme.colors.gray700};
+  }
 
   h4 {
     display: flex;
     align-items: center;
     height: 8rem;
-    padding: 0 0.4rem 0 1.8rem;
     ${theme.fonts.title03}
     color: ${theme.colors.gray700};
   }
 
-  .entireText {
+  .allergyAnswer {
     display: flex;
     flex-direction: column;
-    padding-top: 2.5rem;
     gap: 2rem;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
   }
 
+  .allergyAnswer.active {
+    max-height: 20.1rem;
+  }
+
   .first {
+    padding-top: 2.5rem;
     ${theme.fonts.body06}
   }
 
@@ -162,19 +141,34 @@ export const allergy = (theme: Theme) => css`
 export const origin = (theme: Theme) => css`
   padding-bottom: 7rem;
 
+  .originQuestion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0.4rem 0 1.8rem;
+    border-bottom: 1px solid ${theme.colors.gray700};
+  }
+
   h4 {
     display: flex;
     align-items: center;
     height: 8rem;
-    padding: 0 0.4rem 0 1.8rem;
     ${theme.fonts.title03}
     color: ${theme.colors.gray700};
   }
 
-  p {
-    padding-top: 2.5rem;
+  .originAnswer {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
+    ${theme.fonts.body06}
+  }
+
+  .originAnswer.active {
+    max-height: 12.3rem;
+  }
+
+  p {
+    padding-top: 2.5rem;
   }
 `;
