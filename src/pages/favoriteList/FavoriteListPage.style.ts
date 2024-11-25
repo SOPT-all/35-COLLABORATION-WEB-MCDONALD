@@ -16,11 +16,17 @@ export const Banner = (theme: Theme) => css`
 `;
 
 export const ProductCount = (theme: Theme) => css`
-  padding: 0 1.5rem 7rem;
   display: flex;
   align-items: center;
   gap: 1rem;
   margin-top: 3.8rem;
   color: ${theme.colors.gray700};
   ${theme.fonts.title06};
+`;
+
+export const PostGrid = () => css`
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
 `;
