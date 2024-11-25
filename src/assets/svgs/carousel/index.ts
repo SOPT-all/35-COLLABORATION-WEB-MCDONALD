@@ -1,0 +1,12 @@
+export { default as Cimg1 } from './Cimg1';
+export { default as Cimg10 } from './Cimg10';
+export { default as Cimg2 } from './Cimg2';
+export { default as Cimg3 } from './Cimg3';
+export { default as Cimg4 } from './Cimg4';
+export { default as Cimg5 } from './Cimg5';
+export { default as Cimg6 } from './Cimg6';
+export { default as Cimg7 } from './Cimg7';
+export { default as Cimg8 } from './Cimg8';
+export { default as Cimg9 } from './Cimg9';
+export { default as IcPlay } from './IcPlay';
+export { default as IcStop } from './IcStop';
