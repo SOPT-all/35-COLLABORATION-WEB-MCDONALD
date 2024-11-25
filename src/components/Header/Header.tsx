@@ -26,7 +26,7 @@ const Header = () => {
   }, []);
 
   // 상세 페이지 확인
-  const isDetailPage = location.pathname.startsWith('/details');
+  const isDetailPage = location.pathname.startsWith('/detail');
 
   // 메인 페이지 이동
   const navMain = () => {
