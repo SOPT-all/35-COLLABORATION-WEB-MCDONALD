@@ -1,4 +1,11 @@
-import { HCimg1, HCimg2, HCimg3, HCimg4, HCimg5, HCimg6 } from '@assets/svgs';
+import {
+  HCimg1,
+  HCimg2,
+  HCimg3,
+  HCimg4,
+  HCimg5,
+  HCimg6,
+} from '@assets/svgs/homeCard';
 
 export const HOMECARD_LIST = [
   {

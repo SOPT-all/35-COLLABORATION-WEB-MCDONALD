@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import HomeCard, { HomeCardProps } from './HomeCard';
-import { HCimg1 } from '@assets/svgs';
+import { HCimg1 } from '@assets/svgs/homeCard';
 
 const meta = {
   title: 'Components/HomeCard',

@@ -1,3 +1,5 @@
+export { default as IcNext } from './IcNext';
+export { default as IcPrev } from './IcPrev';
 export { default as ImgMenu1 } from './burger/ImgMenu1';
 export { default as ImgMenu10 } from './burger/ImgMenu10';
 export { default as ImgMenu2 } from './burger/ImgMenu2';
@@ -16,10 +18,4 @@ export { default as IcSearch } from './sidebar/IcSearch';
 export { default as ImgHeaderLogo } from './header/ImgHeaderLogo';
 export { default as IcDeliver } from './bottomNav/IcDeliver';
 export { default as IcLocation } from './bottomNav/IcLocation';
-export { default as HCimg1 } from './HCimg1';
-export { default as HCimg2 } from './HCimg2';
-export { default as HCimg3 } from './HCimg3';
-export { default as HCimg4 } from './HCimg4';
-export { default as HCimg5 } from './HCimg5';
-export { default as HCimg6 } from './HCimg6';
 export { default as IcSeemore } from './IcSeemore';
