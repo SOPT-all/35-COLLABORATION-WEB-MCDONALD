@@ -1,5 +1,4 @@
 import { Theme, css } from '@emotion/react';
-import theme from 'src/styles/theme';
 
 export const postStyleContainer = (theme: Theme) => css`
   display: flex;
