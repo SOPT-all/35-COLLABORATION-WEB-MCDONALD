@@ -1,4 +1,3 @@
-import React from 'react';
 import * as S from './FavoriteListPage.style';
 import { Cimg12, ListStyle } from '@assets/svgs/burgerList';
 import { PRODUCT_LIST } from '@constants/productList';
