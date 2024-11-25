@@ -1,12 +1,16 @@
-import { createBrowserRouter } from "react-router-dom";
-import Main from "../pages/Main";
-import Layout from "@layouts/Layout";
+import { createBrowserRouter } from 'react-router-dom';
+import Main from '../pages/Main';
+import Layout from '@layouts/Layout';
+import BurgerDetailPage from '@pages/burgerdetail/BurgerDetailPage';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Layout />,
-    children: [{ path: "", element: <Main /> }],
+    children: [
+      { path: '', element: <Main /> },
+      { path: 'detail', element: <BurgerDetailPage /> },
+    ],
   },
 ]);
 
