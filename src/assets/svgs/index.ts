@@ -1,3 +1,5 @@
+export { default as IcNext } from './IcNext';
+export { default as IcPrev } from './IcPrev';
 export { default as ImgMenu1 } from './burger/ImgMenu1';
 export { default as ImgMenu10 } from './burger/ImgMenu10';
 export { default as ImgMenu2 } from './burger/ImgMenu2';
