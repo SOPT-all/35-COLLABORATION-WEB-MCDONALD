@@ -3,6 +3,7 @@ import React from 'react';
 import { ThemeProvider, Global } from '@emotion/react';
 import GlobalStyle from '../src/styles/global';
 import theme from '../src/styles/theme';
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 const preview: Preview = {
   parameters: {
@@ -11,6 +12,10 @@ const preview: Preview = {
         color: /(background|color)$/i,
         date: /Date$/i,
       },
+    },
+    viewport: {
+      viewports: INITIAL_VIEWPORTS,
+      defaultViewport: 'iphone6',
     },
   },
   decorators: [
