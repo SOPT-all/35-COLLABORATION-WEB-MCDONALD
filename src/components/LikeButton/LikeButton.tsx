@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BtnHeart, IcHeartDisabled } from '@assets/svgs';
+import { BtnHeart, BtnDisabled } from '@assets/svgs/likeButton';
 import * as S from './LikeButton.style';
 
 type LikeButtonProps = {
@@ -18,7 +18,7 @@ const LikeButton = ({ isClicked = false }: LikeButtonProps) => {
       {isFavorite ? (
         <BtnHeart css={S.LikeButton} />
       ) : (
-        <IcHeartDisabled css={S.LikeButton} />
+        <BtnDisabled css={S.LikeButton} />
       )}
     </div>
   );
