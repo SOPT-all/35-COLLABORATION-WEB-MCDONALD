@@ -11,11 +11,11 @@ const Main = () => (
     <main css={S.MainLayout}>
       <h1 css={S.Title}>McDonald’s LIVE</h1>
       <Spacing size="2.2" />
-      <section css={S.CardLayout}>
+      <article css={S.CardLayout}>
         {HOMECARD_LIST.map((card) => (
           <HomeCard key={card.id} img={card.img} title={card.title} />
         ))}
-      </section>
+      </article>
       <Spacing size="6" />
       <IcSeemore width={70} height={70} />
     </main>
