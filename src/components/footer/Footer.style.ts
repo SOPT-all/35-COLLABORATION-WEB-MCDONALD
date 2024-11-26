@@ -8,20 +8,21 @@ export const footerStyle = (theme: Theme) => css`
   transform: translateY(-100%);
   width: 37.5rem;
   height: 62.4rem;
+  padding: 0 1.5rem;
   background-color: ${theme.colors.gray700};
 
-  & form {
+  ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 34.5rem;
     height: 16.1rem;
     max-width: 34.5rem;
-    margin: 3.3rem 1.5rem 0 1.5rem;
+    margin-top: 3.3rem;
     align-items: center;
-    border-bottom: 0.1rem solid ${theme.colors.gray500};
+    border-bottom: 1px solid ${theme.colors.gray500};
   }
 
-  & form div {
+  ul li {
     width: 17.2rem;
     height: 3.6rem;
     padding: 0.775rem 0;
@@ -29,80 +30,60 @@ export const footerStyle = (theme: Theme) => css`
     color: ${theme.colors.white};
   }
 
-  & form .highlightMenu {
+  ul .highlightMenu {
     color: ${theme.colors.yellow01};
   }
 
-  & form .bottomMenu {
+  ul .bottomMenu {
     margin-bottom: 1.4rem;
   }
 
-  & .middle {
+  .middle {
     display: flex;
     flex-direction: column;
     width: 34.5rem;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
     padding: 3rem 0;
-    border-bottom: 0.1rem solid ${theme.colors.gray500};
+    border-bottom: 1px solid ${theme.colors.gray500};
     align-items: flex-start;
   }
 
-  & .middle p {
+  .middle p {
     padding-top: 0.1rem;
     padding-bottom: 0.2rem;
     ${theme.fonts.body08}
     color: ${theme.colors.gray300};
   }
 
-  & .copyright {
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+  .copyright {
     padding: 3rem 15.6rem 0 0;
     ${theme.fonts.body11}
     color: ${theme.colors.gray300};
   }
 
-  & .bottom {
+  .bottom {
     display: flex;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
     gap: 1.7rem;
   }
 
-  & .imgFooterIsms {
+  .imgFooterIsms {
     width: 60px;
     height: 60px;
-    border-radius: 0.6rem;
+    border-radius: 6px;
   }
 
-  & .bottomRight {
+  .bottomRight {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     width: 26.8rem;
     ${theme.fonts.body11}
     color: ${theme.colors.white};
   }
 
-  & .icons {
+  .icons {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 1.8rem 2.3rem 0 2.4rem;
+    margin: 1.8rem 0.8rem 0 0.9rem;
     gap: 3.1rem;
-  }
-
-  & .icFacebook,
-  .icInstagram,
-  .icYoutube,
-  .icKakaostory {
-    width: 4rem;
-    height: 4rem;
-  }
-
-  & .imgFooterWa {
-    width: 4.4rem;
-    height: 3.1rem;
   }
 `;

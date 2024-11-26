@@ -11,16 +11,16 @@ import Spacing from '@components/common/spacing/Spacing';
 
 const Footer = () => (
   <footer css={footerStyle}>
-    <form>
-      <div className="highlightMenu">개인정보 처리방침</div>
-      <div>위치정보 이용약관</div>
-      <div>사이트맵</div>
-      <div>임차문의</div>
-      <div>고객문의</div>
-      <div>인재채용</div>
-      <div className="bottomMenu">PC버전</div>
-      <div className="bottomMenu">ENG</div>
-    </form>
+    <ul>
+      <li className="highlightMenu">개인정보 처리방침</li>
+      <li>위치정보 이용약관</li>
+      <li>사이트맵</li>
+      <li>임차문의</li>
+      <li>고객문의</li>
+      <li>인재채용</li>
+      <li className="bottomMenu">PC버전</li>
+      <li className="bottomMenu">ENG</li>
+    </ul>
 
     <div className="middle">
       <p>한국맥도날드(유)</p>
@@ -49,11 +49,11 @@ const Footer = () => (
     </div>
 
     <div className="icons">
-      <IcFacebook className="icFacebook" />
-      <IcInstagram className="icInstagram" />
-      <IcYoutube className="icYoutube" />
-      <IcKakaostory className="icKakaostory" />
-      <ImgFooterWa className="imgFooterWa" />
+      <IcFacebook width={40} height={40} />
+      <IcInstagram width={40} height={40} />
+      <IcYoutube width={40} height={40} />
+      <IcKakaostory width={40} height={40} />
+      <ImgFooterWa width={44} height={31} />
     </div>
   </footer>
 );
