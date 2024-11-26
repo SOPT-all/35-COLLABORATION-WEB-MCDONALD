@@ -5,8 +5,7 @@ export const Banner = (theme: Theme) => css`
   align-items: center;
   width: 37.5rem;
   height: 16.6rem;
-  flex-shrink: 0;
-  background: var(--Blackgrad, rgba(0, 0, 0, 0.5));
+  background: ${theme.colors.Blackgrad};
   .banner__title {
     position: absolute;
     left: 1.2rem;
