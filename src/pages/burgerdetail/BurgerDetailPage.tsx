@@ -4,6 +4,7 @@ import * as S from './BurgerDetailPage.style';
 import { Ellipse, Cimg11, IcMinus, IcPlus } from '@assets/svgs/detail';
 import NutritionTable from '@components/BurgerDetail/NutritionTable';
 import Spacing from '@components/common/spacing/Spacing';
+import { IcNext, IcPrev } from '@assets/svgs';
 
 const BurgerDetailPage = () => {
   const [activeIndex, setActiveIndex] = useState<number[]>([]);
@@ -27,7 +28,9 @@ const BurgerDetailPage = () => {
               <div className="english">{burger.burger_name_eng}</div>
               <Spacing size="1" />
               <div css={S.burgerImg}>
+                <IcPrev css={S.buttonStyle('left')} />
                 <Cimg11 width={346} />
+                <IcNext css={S.buttonStyle('right')} />
               </div>
             </div>
 

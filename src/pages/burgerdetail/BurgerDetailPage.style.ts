@@ -43,10 +43,20 @@ export const ellipse = css`
 `;
 
 export const burgerImg = css`
+  position: relative;
   display: flex;
   justify-content: center;
   width: 100%;
   z-index: 2;
+`;
+
+export const buttonStyle = (position: string) => css`
+  position: absolute;
+  top: 50%;
+  ${position}: 0;
+  width: 4rem;
+  height: 4.5rem;
+  transform: translateY(-50%);
 `;
 
 export const info = (theme: Theme) => css`
