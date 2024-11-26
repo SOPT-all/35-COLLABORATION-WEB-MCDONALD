@@ -87,3 +87,9 @@ export const footerStyle = (theme: Theme) => css`
     gap: 3.1rem;
   }
 `;
+
+export const buttonStyle = css`
+  position: fixed;
+  bottom: 56rem;
+  left: calc(50% + 12.15rem);
+`;

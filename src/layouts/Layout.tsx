@@ -4,6 +4,7 @@ import Header from '@components/Header/Header';
 import BottomNav from '@components/BottomNav/BottomNav';
 import { Outlet } from 'react-router-dom';
 import { css } from '@emotion/react';
+import FabButton from '@components/FabButton/FabButton';
 
 const Layout = () => (
   <>
@@ -11,6 +12,7 @@ const Layout = () => (
       <Header />
       <Spacing size="6.2" />
       <Outlet />
+      <FabButton />
     </div>
     <BottomNav />
     <Footer />
