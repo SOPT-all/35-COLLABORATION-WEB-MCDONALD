@@ -13,13 +13,13 @@ export const postStyleContainer = (theme: Theme) => css`
   border-radius: 5px;
   background-color: ${theme.colors.gray000};
 `;
+
 export const imageSection = css`
   position: relative;
   display: flex;
   height: 11rem;
   justify-content: center;
   align-items: center;
-  flex-shrink: 0;
   align-self: stretch;
 `;
 
