@@ -63,6 +63,10 @@ export const info = (theme: Theme) => css`
   text-align: center;
 `;
 
+export const questionStyle = () => css`
+  cursor: pointer;
+`;
+
 export const nutrition = (theme: Theme) => css`
   padding-top: 7.2rem;
 
@@ -96,6 +100,7 @@ export const nutrition = (theme: Theme) => css`
     width: 100%;
     ${theme.fonts.body03}
     color: ${theme.colors.black};
+    text-align: center;
   }
 
   tr {
@@ -103,11 +108,14 @@ export const nutrition = (theme: Theme) => css`
     grid-template-columns: repeat(3, 1fr);
   }
 
-  td,
-  th {
+  td {
     padding: 2.05rem 0;
     border-bottom: 1px solid ${theme.colors.gray200};
-    text-align: center;
+  }
+
+  th {
+    padding: 2.05rem 0;
+    border-bottom: 1px solid ${theme.colors.gray700};
   }
 `;
 
@@ -132,6 +140,7 @@ export const allergy = (theme: Theme) => css`
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    width: 32.6rem;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import data from './data.json';
 import * as S from './BurgerDetailPage.style';
 import { Ellipse, Cimg11, IcMinus, IcPlus } from '@assets/svgs/detail';
+import NutritionTable from '@components/BurgerDetail/NutritionTable';
 
 const BurgerDetailPage = () => {
   const [activeIndex, setActiveIndex] = useState<number[]>([]);
@@ -36,7 +37,11 @@ const BurgerDetailPage = () => {
 
           <ul>
             <li css={S.nutrition}>
-              <div className="nutritionQuestion" onClick={() => toggle(index)}>
+              <div
+                className="nutritionQuestion"
+                onClick={() => toggle(index)}
+                css={S.questionStyle}
+              >
                 <h4>영양정보</h4>
                 {activeIndex.includes(index) ? (
                   <IcMinus width={24} height={24} />
@@ -47,62 +52,16 @@ const BurgerDetailPage = () => {
               <div
                 className={`nutritionAnswer ${activeIndex.includes(0) ? 'active' : ''}`}
               >
-                <table>
-                  <thead>
-                    <tr>
-                      <th>영양소</th>
-                      <th>함량</th>
-                      <th>영양소기준치</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>중량(g)</td>
-                      <td>{burger.nutrition.weight_g}g</td>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <td>중량(ml)</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <td>열량</td>
-                      <td>{burger.nutrition.calories}kcal</td>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <td>당</td>
-                      <td>{burger.nutrition.sugar}g</td>
-                      <td>10%</td>
-                    </tr>
-                    <tr>
-                      <td>단백질</td>
-                      <td>{burger.nutrition.protein}g</td>
-                      <td>69%</td>
-                    </tr>
-                    <tr>
-                      <td>포화지방</td>
-                      <td>{burger.nutrition.saturated_fat}g</td>
-                      <td>30%</td>
-                    </tr>
-                    <tr>
-                      <td>나트륨</td>
-                      <td>{burger.nutrition.sodium}mg</td>
-                      <td>89%</td>
-                    </tr>
-                    <tr>
-                      <td>카페인</td>
-                      <td>{burger.nutrition.caffeine}mg</td>
-                      <td>-</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <NutritionTable nutrition={burger.nutrition} />
               </div>
             </li>
 
             <li css={S.allergy}>
-              <div className="allergyQuestion" onClick={() => toggle(1)}>
+              <div
+                className="allergyQuestion"
+                onClick={() => toggle(1)}
+                css={S.questionStyle}
+              >
                 <h4>알레르기 정보</h4>
                 {activeIndex.includes(1) ? (
                   <IcMinus width={24} height={24} />
@@ -126,7 +85,11 @@ const BurgerDetailPage = () => {
             </li>
 
             <li css={S.origin}>
-              <div className="originQuestion" onClick={() => toggle(2)}>
+              <div
+                className="originQuestion"
+                onClick={() => toggle(2)}
+                css={S.questionStyle}
+              >
                 <h4>원산지 정보</h4>
                 {activeIndex.includes(2) ? (
                   <IcMinus width={24} height={24} />
