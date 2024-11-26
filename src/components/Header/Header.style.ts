@@ -12,7 +12,7 @@ export const HeaderContainer = (isLine: boolean) => (theme: Theme) => css`
   background-color: ${theme.colors.white};
   border-bottom: ${isLine ? `1px solid ${theme.colors.gray100}` : 'none'};
   transition: border-bottom 0.3s ease;
-  z-index: 1;
+  z-index: 4;
 
   svg {
     cursor: pointer;
