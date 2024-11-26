@@ -1,5 +1,9 @@
 import { Theme, css } from '@emotion/react';
 
+export const ListSection = () => css`
+  padding: 0 1.5rem 7rem;
+`;
+
 export const Banner = (theme: Theme) => css`
   display: flex;
   align-items: center;

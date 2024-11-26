@@ -16,13 +16,15 @@ const FavoriteListPage = () => {
         <span>{`${productLength} products`}</span>
       </section>
 
-      <ul css={S.PostGrid}>
-        {PRODUCT_LIST.map((product) => (
-          <li key={product.id}>
-            <BurgerPost titleKo={product.titleKo} titleEn={product.titleEn} />
-          </li>
-        ))}
-      </ul>
+      <section css={S.ListSection}>
+        <ul css={S.PostGrid}>
+          {PRODUCT_LIST.map((product) => (
+            <li key={product.id}>
+              <BurgerPost titleKo={product.titleKo} titleEn={product.titleEn} />
+            </li>
+          ))}
+        </ul>
+      </section>
     </>
   );
 };
