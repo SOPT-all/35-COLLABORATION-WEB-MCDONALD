@@ -1,13 +1,3 @@
 export { default as IcNext } from './IcNext';
 export { default as IcPrev } from './IcPrev';
 export { default as IcSeemore } from './IcSeemore';
-export { default as ImgMenu1 } from './burger/ImgMenu1';
-export { default as ImgMenu10 } from './burger/ImgMenu10';
-export { default as ImgMenu2 } from './burger/ImgMenu2';
-export { default as ImgMenu3 } from './burger/ImgMenu3';
-export { default as ImgMenu4 } from './burger/ImgMenu4';
-export { default as ImgMenu5 } from './burger/ImgMenu5';
-export { default as ImgMenu6 } from './burger/ImgMenu6';
-export { default as ImgMenu7 } from './burger/ImgMenu7';
-export { default as ImgMenu8 } from './burger/ImgMenu8';
-export { default as ImgMenu9 } from './burger/ImgMenu9';

@@ -2,7 +2,8 @@ import { Theme, css } from '@emotion/react';
 
 export const postStyleContainer = (theme: Theme) => css`
   display: flex;
-  width: 16.9rem;
+  width: 100%;
+  max-width: 16.9rem;
   height: 25.4rem;
   padding: 2.4rem 2rem;
   flex-direction: column;
@@ -12,12 +13,13 @@ export const postStyleContainer = (theme: Theme) => css`
   border-radius: 5px;
   background-color: ${theme.colors.gray000};
 `;
+
 export const imageSection = css`
+  position: relative;
   display: flex;
   height: 11rem;
   justify-content: center;
   align-items: center;
-  flex-shrink: 0;
   align-self: stretch;
 `;
 
