@@ -1,4 +1,4 @@
-import { ImgMenu1 } from '@assets/svgs';
+import { ImgMenu1 } from '@assets/svgs/detail';
 import {
   postStyleContainer,
   titleSection,

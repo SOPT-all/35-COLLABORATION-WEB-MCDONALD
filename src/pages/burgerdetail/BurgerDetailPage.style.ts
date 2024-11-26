@@ -6,18 +6,31 @@ export const titleStyle = (theme: Theme) => css`
   padding-top: 12.7rem;
 
   .korean {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    flex-wrap: wrap;
     ${theme.fonts.headline02}
     color: ${theme.colors.gray700};
     text-align: center;
     z-index: 2;
+
+    span {
+      height: 4rem;
+    }
   }
 
   .english {
     display: flex;
     justify-content: center;
+    align-items: end;
     ${theme.fonts.title05}
     color: ${theme.colors.gray500};
     z-index: 2;
+
+    span {
+      height: 2.5rem;
+    }
   }
 `;
 
@@ -32,6 +45,7 @@ export const ellipse = css`
 export const burgerImg = css`
   display: flex;
   position: relative;
+  top: 3.8rem;
   width: 34.6rem;
   margin: 0 auto;
   z-index: 2;
@@ -42,7 +56,7 @@ export const info = (theme: Theme) => css`
   flex-direction: column;
   width: 26.7rem;
   margin: 0 auto;
-  padding-top: 2rem;
+  padding-top: 4rem;
   gap: 2rem;
   ${theme.fonts.body05}
   color: ${theme.colors.gray500};
@@ -84,9 +98,13 @@ export const nutrition = (theme: Theme) => css`
     color: ${theme.colors.black};
   }
 
+  tr {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   td,
   th {
-    width: 33.33%; /* 열을 균등하게 */
     padding: 2.05rem 0;
     border-bottom: 1px solid ${theme.colors.gray200};
     text-align: center;
