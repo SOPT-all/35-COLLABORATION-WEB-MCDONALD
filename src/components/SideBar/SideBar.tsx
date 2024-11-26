@@ -37,7 +37,7 @@ const SideBar = ({ isOpen, toggleSidebar }: SidebarProps) => {
   }, [isOpen]);
 
   return (
-    <nav css={S.Wrapper}>
+    <nav css={S.Wrapper(isOpen)}>
       <div css={S.Container(isOpen)}>
         <ul css={S.MainList}>
           {SIDEBAR_LIST.map((item, index) => (

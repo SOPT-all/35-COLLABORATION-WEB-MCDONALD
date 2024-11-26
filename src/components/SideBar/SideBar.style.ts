@@ -1,11 +1,14 @@
 import { Theme, css } from '@emotion/react';
 
-export const Wrapper = () => css`
+export const Wrapper = (isOpen: boolean) => css`
   position: fixed;
   top: 6.2rem;
   overflow-x: hidden;
   width: 37.5rem;
   height: calc(100vh - 6.2rem);
+
+  visibility: ${isOpen ? 'visible' : 'hidden'};
+  transition: visibility 0s ${isOpen ? '0s' : '0.3s'};
   z-index: 5;
 `;
 
