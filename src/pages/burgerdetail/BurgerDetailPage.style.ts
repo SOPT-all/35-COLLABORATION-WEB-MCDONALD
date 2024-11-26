@@ -19,7 +19,8 @@ export const titleStyle = (theme: Theme) => css`
     z-index: 2;
 
     span {
-      height: 4rem;
+      position: relative;
+      top: 2rem;
     }
   }
 
@@ -29,7 +30,8 @@ export const titleStyle = (theme: Theme) => css`
     z-index: 2;
 
     span {
-      height: 2.5rem;
+      position: relative;
+      top: 1rem;
     }
   }
 `;
