@@ -14,4 +14,5 @@ export const ButtonContainer =
     background-color: ${isHighlighted
       ? theme.colors.red02
       : theme.colors.white};
+    cursor: pointer;
   `;

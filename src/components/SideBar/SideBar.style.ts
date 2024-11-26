@@ -2,14 +2,14 @@ import { Theme, css } from '@emotion/react';
 
 export const Wrapper = (isOpen: boolean) => css`
   position: fixed;
-  top: 0;
-  overflow: hidden;
+  top: 6.2rem;
+  overflow-x: hidden;
   width: 37.5rem;
-  height: 100vh;
-  z-index: 2;
+  height: calc(100vh - 6.2rem);
 
   visibility: ${isOpen ? 'visible' : 'hidden'};
   transition: visibility 0s ${isOpen ? '0s' : '0.3s'};
+  z-index: 5;
 `;
 
 export const Container = (isOpen: boolean) => css`
@@ -18,23 +18,20 @@ export const Container = (isOpen: boolean) => css`
   width: 100%;
 `;
 
-export const CloseBtn = (theme: Theme) => css`
-  display: flex;
-  height: 6.2rem;
-  margin-left: auto;
-  background-color: ${theme.colors.white};
-  border: none;
-  cursor: pointer;
-`;
-
 export const MainList = (theme: Theme) => css`
   display: flex;
   flex-direction: column;
   gap: 3.1rem;
-  overflow-y: scroll;
   height: calc(100vh - 6.2rem - 13.4rem);
   padding: 4.8rem 3rem 0;
   background-color: ${theme.colors.white};
+
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const MainListTitle = (theme: Theme) => css`

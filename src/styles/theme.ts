@@ -38,7 +38,7 @@ const theme = {
       fontFamily: 'Apple SD Gothic Neo',
       fontSize: '38px',
       fontWeight: 900,
-      lineHeight: '1.4px',
+      lineHeight: 'normal',
       letterSpacing: '0',
     },
 

@@ -1,0 +1,18 @@
+{
+  "id": 1,
+  "burger_name": "더블 맥스파이시® 상하이 버거",
+  "burger_name_eng": "Double McSpicy® Shanghai Burger",
+  "description": "진한 불고기 소스의 패티가 두 장! 고소한 치즈와 마요네즈, 신선한 양상추를 곁들인 깊고 풍부한 맛.",
+  "nutrition": {
+    "weight_g": 198,
+    "weight_ml": null,
+    "calories": 536,
+    "sugar": 10,
+    "protein": 31,
+    "saturated_fat": 13,
+    "sodium": 966,
+    "caffeine": null
+  },
+  "allegy": ["난류", "대두", "밀", "토마토", "닭고기"],
+  "origin": "닭고기:태국산(경상지역),국내산(그 외 지역)"
+}
