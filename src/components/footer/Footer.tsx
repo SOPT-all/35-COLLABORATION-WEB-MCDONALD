@@ -5,7 +5,7 @@ import {
   IcYoutube,
   ImgFooterIsms,
   ImgFooterWa,
-} from '@assets/svgs';
+} from '@assets/svgs/footer';
 import { footerStyle } from './Footer.style';
 import Spacing from '@components/common/spacing/Spacing';
 
