@@ -3,6 +3,7 @@ import data from './data.json';
 import * as S from './BurgerDetailPage.style';
 import { Ellipse, Cimg11, IcMinus, IcPlus } from '@assets/svgs/detail';
 import NutritionTable from '@components/BurgerDetail/NutritionTable';
+import Spacing from '@components/common/spacing/Spacing';
 
 const BurgerDetailPage = () => {
   const [activeIndex, setActiveIndex] = useState<number[]>([]);
@@ -20,21 +21,22 @@ const BurgerDetailPage = () => {
     <main>
       {data.map((burger, index) => (
         <div key={burger.id}>
-          <div css={S.titleStyle}>
-            <div className="korean">{burger.burger_name}</div>
-            <div className="english">{burger.burger_name_eng}</div>
-          </div>
+          <section css={S.InfoWrapper}>
+            <div css={S.titleStyle}>
+              <div className="korean">{burger.burger_name}</div>
+              <div className="english">{burger.burger_name_eng}</div>
+              <Spacing size="1" />
+              <div css={S.burgerImg}>
+                <Cimg11 width={346} />
+              </div>
+            </div>
 
-          <div>
             <Ellipse css={S.ellipse} />
-            <Cimg11 css={S.burgerImg} />
-          </div>
-
-          <div css={S.info}>
-            <div className="up">{burger.description}</div>
-            <div className="down">*판매시간 : 오전 10시 30분 ~ 새벽 4시</div>
-          </div>
-
+            <div css={S.info}>
+              <div className="up">{burger.description}</div>
+              <div className="down">*판매시간 : 오전 10시 30분 ~ 새벽 4시</div>
+            </div>
+          </section>
           <ul>
             <li css={S.nutrition}>
               <div

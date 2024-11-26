@@ -1,15 +1,18 @@
 import { css, Theme } from '@emotion/react';
 
+export const InfoWrapper = () => css`
+  position: relative;
+  width: 100%;
+`;
+
 export const titleStyle = (theme: Theme) => css`
   display: flex;
   flex-direction: column;
-  padding-top: 12.7rem;
+  align-items: center;
+  padding-top: 6.5rem;
 
   .korean {
-    display: flex;
-    justify-content: center;
-    align-items: end;
-    flex-wrap: wrap;
+    width: 26.9rem;
     ${theme.fonts.headline02}
     color: ${theme.colors.gray700};
     text-align: center;
@@ -21,9 +24,6 @@ export const titleStyle = (theme: Theme) => css`
   }
 
   .english {
-    display: flex;
-    justify-content: center;
-    align-items: end;
     ${theme.fonts.title05}
     color: ${theme.colors.gray500};
     z-index: 2;
@@ -36,18 +36,16 @@ export const titleStyle = (theme: Theme) => css`
 
 export const ellipse = css`
   position: absolute;
-  left: 4rem;
-  top: 19.2rem;
+  left: 5rem;
+  top: 13rem;
   width: 25.1rem;
   z-index: 1;
 `;
 
 export const burgerImg = css`
   display: flex;
-  position: relative;
-  top: 3.8rem;
-  width: 34.6rem;
-  margin: 0 auto;
+  justify-content: center;
+  width: 100%;
   z-index: 2;
 `;
 
@@ -58,9 +56,11 @@ export const info = (theme: Theme) => css`
   margin: 0 auto;
   padding-top: 4rem;
   gap: 2rem;
+
   ${theme.fonts.body05}
   color: ${theme.colors.gray500};
   text-align: center;
+  word-break: keep-all;
 `;
 
 export const questionStyle = () => css`
