@@ -2,7 +2,8 @@ import { Theme, css } from '@emotion/react';
 
 export const postStyleContainer = (theme: Theme) => css`
   display: flex;
-  width: 16.9rem;
+  width: 100%;
+  max-width: 16.9rem;
   height: 25.4rem;
   padding: 2.4rem 2rem;
   flex-direction: column;
