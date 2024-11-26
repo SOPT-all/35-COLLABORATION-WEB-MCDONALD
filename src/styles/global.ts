@@ -21,7 +21,6 @@ const GlobalStyle = (theme: Theme) => css`
   #root {
     position: relative;
     width: 375px;
-    overflow-x: hidden;
   }
 `;
 
