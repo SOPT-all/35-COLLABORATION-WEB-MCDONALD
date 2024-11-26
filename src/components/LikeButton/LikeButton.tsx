@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BtnHeart, BtnDisabled, BtnPressed } from '@assets/svgs/likeButton';
+import { BtnDisabled } from '@assets/svgs/likeButton';
 import * as S from './LikeButton.style';
 
 type LikeButtonProps = {
@@ -22,11 +22,21 @@ const LikeButton = ({ isClicked = false }: LikeButtonProps) => {
   return (
     <div onClick={toggleFavorite} style={{ cursor: 'pointer' }}>
       {isPressed ? (
-        <BtnPressed css={S.LikeButton} />
+        <BtnDisabled
+          css={S.LikeButton}
+          rectFill="gray"
+          pathFill="#fff"
+          stroke="none"
+        />
       ) : isFavorite ? (
-        <BtnHeart css={S.LikeButton} />
+        <BtnDisabled
+          css={S.LikeButton}
+          rectFill="#fff"
+          pathFill="#DB0006"
+          stroke="none"
+        />
       ) : (
-        <BtnDisabled css={S.LikeButton} />
+        <BtnDisabled css={S.LikeButton} rectFill="#fff" pathFill="none" />
       )}
     </div>
   );
