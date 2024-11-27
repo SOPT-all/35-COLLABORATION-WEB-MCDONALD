@@ -41,7 +41,8 @@ const BurgerDetailPage = () => {
             <div className="down">*판매시간 : 오전 10시 30분 ~ 새벽 4시</div>
           </div>
         </section>
-        <ul>
+
+        <ul css={S.listStyle}>
           <li css={S.nutrition}>
             <div
               className="nutritionQuestion"

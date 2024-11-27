@@ -20,6 +20,7 @@ export const Banner = (theme: Theme) => css`
 
 export const CategoryTab = (theme: Theme) => css`
   display: flex;
+  width: 100%;
   height: 5.6rem;
   padding: 0 1.6rem;
   gap: 2.5rem;

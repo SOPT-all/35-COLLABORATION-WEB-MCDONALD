@@ -75,13 +75,15 @@ export const info = (theme: Theme) => css`
   word-break: keep-all;
 `;
 
+export const listStyle = () => css`
+  padding: 7.2rem 1.6rem 7rem;
+`;
+
 export const questionStyle = () => css`
   cursor: pointer;
 `;
 
 export const nutrition = (theme: Theme) => css`
-  padding-top: 7.2rem;
-
   .nutritionQuestion {
     display: flex;
     align-items: center;
@@ -178,8 +180,6 @@ export const allergy = (theme: Theme) => css`
 `;
 
 export const origin = (theme: Theme) => css`
-  padding-bottom: 7rem;
-
   .originQuestion {
     display: flex;
     align-items: center;
