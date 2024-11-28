@@ -1,26 +1,44 @@
+import { useFavorites } from '@apis/favorites/queries';
 import * as S from './FavoriteListPage.style';
 import { Cimg12, ListStyle } from '@assets/svgs/burgerList';
-import { PRODUCT_LIST } from '@constants/productList';
 import BurgerPost from '@components/BurgerPost/BurgerPost';
+
 const FavoriteListPage = () => {
-  const productLength = PRODUCT_LIST.length;
-  const bannerTitle = '내 메뉴';
+  const { data: favorites, isLoading, isError } = useFavorites();
+
+  if (isLoading) {
+    return <div css={isLoading}>Loading...</div>;
+  }
+
+  if (isError) {
+    console.log(isError);
+    return <div css={isError}>Failed to fetch favorite burgers.</div>;
+  }
+
+  if (!favorites || favorites.length === 0) {
+    return <div css={!favorites}>No favorite burgers found.</div>;
+  }
+
   return (
     <>
       <section css={S.Banner}>
-        <h1 className="banner__title">{bannerTitle}</h1>
+        <h1 className="banner__title">내 메뉴</h1>
         <Cimg12 />
       </section>
+
       <section css={S.ProductCount}>
         <ListStyle width={4} height={4} />
-        <span>{`${productLength} products`}</span>
+        <span>{`${favorites.length} products`}</span>
       </section>
 
       <section css={S.ListSection}>
         <ul css={S.PostGrid}>
-          {PRODUCT_LIST.map((product) => (
-            <li key={product.id}>
-              <BurgerPost titleKo={product.titleKo} titleEn={product.titleEn} />
+          {favorites.map((burger) => (
+            <li key={burger.id}>
+              <BurgerPost
+                titleKo={burger.burger_name}
+                titleEn={burger.burger_name_eng}
+              />
             </li>
           ))}
         </ul>
