@@ -20,6 +20,7 @@ const HomeCard = ({ img, title }: HomeCardProps) => {
       setIsCalculated(true);
     }
   }, [title]);
+  console.log(isDataValid);
 
   return (
     <section css={S.CardStyle}>
@@ -33,7 +34,7 @@ const HomeCard = ({ img, title }: HomeCardProps) => {
             : S.SkeletonText
         }
       >
-        <p ref={titleRef}>{title}</p>
+        <p ref={titleRef}>{title || 'skeleton'}</p>
       </div>
     </section>
   );

@@ -68,7 +68,7 @@ export const SkeletonText = (theme: Theme) => css`
   }
 
   p::after {
-    content: '';
+    content: 'dd';
     position: absolute;
     top: 0;
     left: 0;
