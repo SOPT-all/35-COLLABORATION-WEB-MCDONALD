@@ -3,7 +3,6 @@ import { BtnDisabled } from '@assets/svgs/likeButton';
 import * as S from './LikeButton.style';
 
 type LikeButtonProps = {
-  isClicked?: boolean;
   burgerData: {
     id: number;
     burgerName: string;
@@ -12,7 +11,7 @@ type LikeButtonProps = {
   };
 };
 
-const LikeButton = ({ isClicked, burgerData }: LikeButtonProps) => {
+const LikeButton = ({ burgerData }: LikeButtonProps) => {
   const [isFavorite, setIsFavorite] = useState(burgerData.liked);
   const [isPressed, setIsPressed] = useState(false);
 
