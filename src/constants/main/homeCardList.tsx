@@ -17,11 +17,11 @@ export const HOMECARD_LIST = [
     img: <HCimg2 />,
   },
   {
-    id: 6,
+    id: 3,
     img: <HCimg6 />,
   },
   {
-    id: 3,
+    id: 4,
     img: <HCimg3 />,
   },
 
@@ -30,7 +30,7 @@ export const HOMECARD_LIST = [
     img: <HCimg5 />,
   },
   {
-    id: 4,
+    id: 6,
     img: <HCimg4 />,
   },
 ];

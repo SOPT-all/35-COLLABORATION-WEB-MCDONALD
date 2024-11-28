@@ -48,6 +48,7 @@ export const TitleStyle = (isThreeLines: boolean) => (theme: Theme) => css`
     color: ${theme.colors.gray500};
     ${theme.fonts.title07};
     overflow: auto;
+    word-break: keep-all;
   }
 `;
 
