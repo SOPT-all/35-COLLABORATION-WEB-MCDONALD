@@ -1,7 +1,7 @@
 export interface favoriteList {
   id: number;
-  burger_name: string;
-  burger_name_eng: string;
+  burgerName: string;
+  burgerNameEng: string;
 }
 
 export interface favoriteResponse {

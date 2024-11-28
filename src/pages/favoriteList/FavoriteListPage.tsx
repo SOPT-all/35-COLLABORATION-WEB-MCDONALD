@@ -36,8 +36,8 @@ const FavoriteListPage = () => {
           {favorites.map((burger) => (
             <li key={burger.id}>
               <BurgerPost
-                titleKo={burger.burger_name}
-                titleEn={burger.burger_name_eng}
+                titleKo={burger.burgerName}
+                titleEn={burger.burgerNameEng}
               />
             </li>
           ))}
