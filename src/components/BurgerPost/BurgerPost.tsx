@@ -2,16 +2,22 @@ import { ImgMenu1 } from '@assets/svgs/burger';
 import * as S from './BurgerPost.style';
 import LikeButton from '@components/LikeButton/LikeButton';
 
-type BugerPostProps = {
+type BurgerPostProps = {
   titleKo: string;
   titleEn: string;
+  burgerData: {
+    id: number;
+    burgerName: string;
+    burgerNameEng: string;
+    liked: boolean;
+  };
 };
 
-const BurgerPost = ({ titleEn, titleKo }: BugerPostProps) => (
+const BurgerPost = ({ titleEn, titleKo, burgerData }: BurgerPostProps) => (
   <div css={S.postStyleContainer}>
     <section css={S.imageSection}>
       <ImgMenu1 />
-      <LikeButton isClicked={false} />
+      <LikeButton burgerData={burgerData} />
     </section>
     <section css={S.titleSection}>
       <p className="title__ko">{titleKo}</p>

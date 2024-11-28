@@ -7,16 +7,16 @@ const FavoriteListPage = () => {
   const { data: favorites, isLoading, isError } = useFavorites();
 
   if (isLoading) {
-    return <div css={isLoading}>Loading...</div>;
+    return <div css={isLoading}></div>;
   }
 
   if (isError) {
     console.log(isError);
-    return <div css={isError}>Failed to fetch favorite burgers.</div>;
+    return <div css={isError}></div>;
   }
 
   if (!favorites || favorites.length === 0) {
-    return <div css={!favorites}>No favorite burgers found.</div>;
+    return <div css={!favorites}></div>;
   }
 
   return (
@@ -38,6 +38,7 @@ const FavoriteListPage = () => {
               <BurgerPost
                 titleKo={burger.burgerName}
                 titleEn={burger.burgerNameEng}
+                burgerData={burger}
               />
             </li>
           ))}

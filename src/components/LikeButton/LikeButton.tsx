@@ -4,10 +4,16 @@ import * as S from './LikeButton.style';
 
 type LikeButtonProps = {
   isClicked?: boolean;
+  burgerData: {
+    id: number;
+    burgerName: string;
+    burgerNameEng: string;
+    liked: boolean;
+  };
 };
 
-const LikeButton = ({ isClicked = false }: LikeButtonProps) => {
-  const [isFavorite, setIsFavorite] = useState(isClicked);
+const LikeButton = ({ isClicked, burgerData }: LikeButtonProps) => {
+  const [isFavorite, setIsFavorite] = useState(burgerData.liked);
   const [isPressed, setIsPressed] = useState(false);
 
   const toggleFavorite = () => {

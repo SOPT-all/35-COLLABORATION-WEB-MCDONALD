@@ -4,7 +4,7 @@ import { Cimg12, ListStyle } from '@assets/svgs/burgerList';
 import FilterButton from '@components/FilterButton/FilterButton';
 import BurgerPost from '@components/BurgerPost/BurgerPost';
 import { CATEGORY_LIST, PRODUCT_TYPE } from '@constants/productFilter';
-import { PRODUCT_LIST } from '@constants/productList'; // API 연결 후 삭제
+import { PRODUCT_LIST } from '@constants/productList';
 
 const BurgerListPage = () => {
   const [selectedCategory, setSelectedCategory] = useState(CATEGORY_LIST[0]);
@@ -49,7 +49,11 @@ const BurgerListPage = () => {
         <ul css={S.ProductGrid}>
           {PRODUCT_LIST.map((product) => (
             <li key={product.id}>
-              <BurgerPost titleKo={product.titleKo} titleEn={product.titleEn} />
+              <BurgerPost
+                titleKo={product.burgerName}
+                titleEn={product.burgerNameEng}
+                burgerData={product}
+              />
             </li>
           ))}
         </ul>
