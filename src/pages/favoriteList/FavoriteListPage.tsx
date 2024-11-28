@@ -35,11 +35,7 @@ const FavoriteListPage = () => {
         <ul css={S.PostGrid}>
           {favorites.map((burger) => (
             <li key={burger.id}>
-              <BurgerPost
-                titleKo={burger.burgerName}
-                titleEn={burger.burgerNameEng}
-                burgerData={burger}
-              />
+              <BurgerPost burgerData={burger} />
             </li>
           ))}
         </ul>

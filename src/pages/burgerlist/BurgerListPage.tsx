@@ -49,11 +49,7 @@ const BurgerListPage = () => {
         <ul css={S.ProductGrid}>
           {PRODUCT_LIST.map((product) => (
             <li key={product.id}>
-              <BurgerPost
-                titleKo={product.burgerName}
-                titleEn={product.burgerNameEng}
-                burgerData={product}
-              />
+              <BurgerPost burgerData={product} />
             </li>
           ))}
         </ul>
