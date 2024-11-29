@@ -4,7 +4,6 @@ export const CarouselLayout = () => css`
   position: relative;
 
   width: 100%;
-  height: 45rem;
 `;
 
 export const CarouselStyle = () => css`

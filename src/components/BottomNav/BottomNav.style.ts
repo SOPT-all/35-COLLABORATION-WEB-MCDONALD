@@ -6,7 +6,8 @@ export const Container = (isOpen: boolean) => (theme: Theme) => css`
   position: fixed;
   bottom: ${isOpen ? '0' : '-6.2rem'};
   transition: bottom 0.3s ease-in-out;
-  width: 37.5rem;
+  max-width: 42.5rem;
+  width: 100%;
   height: 6rem;
   background-color: ${theme.colors.white};
   z-index: 1;

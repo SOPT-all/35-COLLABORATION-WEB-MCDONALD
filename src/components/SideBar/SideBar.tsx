@@ -17,10 +17,12 @@ const SideBar = ({ isOpen, toggleSidebar }: SidebarProps) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  // 목록 페이지 이동
-  const navList = () => {
-    navigate('/list');
-    toggleSidebar();
+  // 페이지 이동 함수
+  const handleNavigation = (path: string | null) => {
+    if (path) {
+      navigate(path);
+      toggleSidebar();
+    }
   };
 
   // 외부 화면 스크롤 방지
@@ -50,8 +52,11 @@ const SideBar = ({ isOpen, toggleSidebar }: SidebarProps) => {
               {item.subItems.length > 0 && (
                 <ul css={S.SubList({ isSubListOpen: openIndex === index })}>
                   {item.subItems.map((subItem, subIndex) => (
-                    <li key={subIndex} onClick={navList}>
-                      {subItem}
+                    <li
+                      key={subIndex}
+                      onClick={() => handleNavigation(subItem.path)}
+                    >
+                      {subItem.title}
                     </li>
                   ))}
                 </ul>

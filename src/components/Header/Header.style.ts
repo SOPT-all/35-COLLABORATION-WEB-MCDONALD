@@ -6,7 +6,8 @@ export const HeaderContainer = (isLine: boolean) => (theme: Theme) => css`
   align-items: center;
   position: fixed;
   top: 0;
-  width: 37.5rem;
+  max-width: 42.5rem;
+  width: 100%;
   height: 6.2rem;
   box-sizing: content-box;
   background-color: ${theme.colors.white};
