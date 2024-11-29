@@ -3,16 +3,12 @@ import { BtnDisabled } from '@assets/svgs/likeButton';
 import * as S from './LikeButton.style';
 import { useAddFavorite } from '@apis/favorites/queries';
 type LikeButtonProps = {
-  burgerData: {
-    id: number;
-    burgerName: string;
-    burgerNameEng: string;
-    liked: boolean;
-  };
+  id: number;
+  liked: boolean;
 };
 
-const LikeButton = ({ burgerData }: LikeButtonProps) => {
-  const [isFavorite, setIsFavorite] = useState(burgerData.liked);
+const LikeButton = ({ id, liked }: LikeButtonProps) => {
+  const [isFavorite, setIsFavorite] = useState(liked);
   const [isPressed, setIsPressed] = useState(false);
   const addFavoriteMutation = useAddFavorite();
 
@@ -23,7 +19,7 @@ const LikeButton = ({ burgerData }: LikeButtonProps) => {
       setIsFavorite((prev) => !prev);
     }, 150);
 
-    addFavoriteMutation.mutate(burgerData.id);
+    addFavoriteMutation.mutate(id);
   };
 
   return (

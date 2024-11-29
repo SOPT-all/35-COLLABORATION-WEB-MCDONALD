@@ -15,7 +15,7 @@ const BurgerPost = ({ burgerData }: BurgerPostProps) => (
   <div css={S.postStyleContainer}>
     <section css={S.imageSection}>
       <ImgMenu1 />
-      <LikeButton burgerData={burgerData} />
+      <LikeButton id={burgerData.id} liked={burgerData.liked} />
     </section>
     <section css={S.titleSection}>
       <p className="title__ko">{burgerData.burgerName}</p>
