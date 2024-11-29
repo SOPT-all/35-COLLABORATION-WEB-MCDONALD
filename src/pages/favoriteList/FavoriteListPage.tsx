@@ -4,20 +4,7 @@ import { Cimg12, ListStyle } from '@assets/svgs/burgerList';
 import BurgerPost from '@components/BurgerPost/BurgerPost';
 
 const FavoriteListPage = () => {
-  const { data: favorites, isLoading, isError } = useFavorites();
-
-  if (isLoading) {
-    return <div css={isLoading}></div>;
-  }
-
-  if (isError) {
-    console.log(isError);
-    return <div css={isError}></div>;
-  }
-
-  if (!favorites || favorites.length === 0) {
-    return <div css={!favorites}></div>;
-  }
+  const { data: favorites } = useFavorites();
 
   return (
     <>
@@ -28,12 +15,12 @@ const FavoriteListPage = () => {
 
       <section css={S.ProductCount}>
         <ListStyle width={4} height={4} />
-        <span>{`${favorites.length} products`}</span>
+        <span>{`${favorites?.length} products`}</span>
       </section>
 
       <section css={S.ListSection}>
         <ul css={S.PostGrid}>
-          {favorites.map((burger) => (
+          {favorites?.map((burger) => (
             <li key={burger.id}>
               <BurgerPost burgerData={burger} />
             </li>

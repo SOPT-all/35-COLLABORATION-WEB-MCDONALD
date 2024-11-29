@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { BtnDisabled } from '@assets/svgs/likeButton';
 import * as S from './LikeButton.style';
-
+import { useAddFavorite } from '@apis/favorites/queries';
 type LikeButtonProps = {
   burgerData: {
     id: number;
@@ -14,14 +14,16 @@ type LikeButtonProps = {
 const LikeButton = ({ burgerData }: LikeButtonProps) => {
   const [isFavorite, setIsFavorite] = useState(burgerData.liked);
   const [isPressed, setIsPressed] = useState(false);
+  const addFavoriteMutation = useAddFavorite();
 
   const toggleFavorite = () => {
     setIsPressed(true);
-
     setTimeout(() => {
       setIsPressed(false);
       setIsFavorite((prev) => !prev);
     }, 150);
+
+    addFavoriteMutation.mutate(burgerData.id);
   };
 
   return (

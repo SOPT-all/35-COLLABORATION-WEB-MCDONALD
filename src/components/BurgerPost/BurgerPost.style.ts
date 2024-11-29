@@ -26,12 +26,11 @@ export const imageSection = css`
 export const titleSection = (theme: Theme) => css`
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 0.8rem;
   align-self: stretch;
+  text-align: center;
   .title__ko {
     color: ${theme.colors.gray600};
-    text-align: center;
     ${theme.fonts.body04};
   }
   .title__en {
