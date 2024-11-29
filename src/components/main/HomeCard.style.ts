@@ -62,11 +62,11 @@ export const SkeletonText = (theme: Theme) => css`
     display: block;
     width: 13.1rem;
     height: fit-content;
-    min-height: 1.8rem;
 
     color: transparent;
     ${theme.fonts.title07};
     overflow: auto;
+    word-break: keep-all;
   }
 
   p::after {

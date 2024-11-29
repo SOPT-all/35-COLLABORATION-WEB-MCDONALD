@@ -20,14 +20,14 @@ const HomeCard = ({ img, title }: HomeCardProps) => {
     }
   }, [title]);
 
-  if (!img || !title || !isCalculated) {
+  if (!img || !isCalculated) {
     return (
       <section css={S.CardStyle}>
         <div css={S.ImgStyle}>
           <div css={S.SkeletonImg} />
         </div>
         <div css={S.SkeletonText}>
-          <p ref={titleRef}></p>
+          <p ref={titleRef}>{title}</p>
         </div>
       </section>
     );
