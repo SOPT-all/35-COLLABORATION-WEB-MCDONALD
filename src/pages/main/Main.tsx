@@ -45,13 +45,9 @@ const Main = () => {
           }
         >
           <article css={S.CardLayout}>
-            {isLoading
-              ? Array.from({ length: 6 }).map((_, index) => (
-                  <HomeCard key={`skeleton-${index}`} img={null} title={null} />
-                ))
-              : articles.map((card) => (
-                  <HomeCard key={card.id} img={card.img} title={card.content} />
-                ))}
+            {articles.map((card) => (
+              <HomeCard key={card.id} img={card.img} title={card.content} />
+            ))}
           </article>
         </Suspense>
         <Spacing size="6" />
