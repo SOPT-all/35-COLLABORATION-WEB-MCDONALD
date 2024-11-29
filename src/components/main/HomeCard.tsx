@@ -3,8 +3,8 @@ import * as S from './HomeCard.style';
 import { calculateLine } from '@utils/calculateLine';
 
 export interface HomeCardProps {
-  img: React.ReactNode | null;
-  title: string | null;
+  img?: React.ReactNode;
+  title?: string;
 }
 
 const HomeCard = ({ img, title }: HomeCardProps) => {

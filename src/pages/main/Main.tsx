@@ -5,7 +5,7 @@ import Spacing from '@components/common/spacing/Spacing';
 import { IcSeemore } from '@assets/svgs';
 import Carousel from '@components/main/Carousel';
 import { useNews } from '@apis/news/queries';
-import { Suspense, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { mergeNewsWithImages } from '@utils/mergeNewsWithImages';
 
 const Main = () => {
@@ -35,21 +35,20 @@ const Main = () => {
       <main css={S.MainLayout}>
         <h1 css={S.Title}>McDonald’s LIVE</h1>
         <Spacing size="2.2" />
-        <Suspense
-          fallback={
-            <article css={S.CardLayout}>
-              {Array.from({ length: 6 }).map((_, index) => (
-                <HomeCard key={`skeleton-${index}`} img={null} title={null} />
-              ))}
-            </article>
-          }
-        >
+        <article css={S.CardLayout}>
+          {articles.map((card) => (
+            <HomeCard key={card.id} img={card.img} title={card.content} />
+          ))}
+        </article>
+
+        {isLoading && (
           <article css={S.CardLayout}>
-            {articles.map((card) => (
-              <HomeCard key={card.id} img={card.img} title={card.content} />
+            {Array.from({ length: 6 }).map((_, index) => (
+              <HomeCard key={`skeleton-${index}`} />
             ))}
           </article>
-        </Suspense>
+        )}
+
         <Spacing size="6" />
         <IcSeemore width={70} height={70} onClick={handleSeeMore} />
       </main>
