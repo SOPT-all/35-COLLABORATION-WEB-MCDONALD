@@ -4,22 +4,26 @@ export const PRODUCT_TYPE = ['전체보기', '치킨버거', '비프버거', '�
 export const PRODUCT_LIST = [
   {
     id: 1,
-    titleKo: '슈슈 버거',
-    titleEn: 'Supreme Shrimp Burger',
+    burgerName: '슈슈 버거',
+    burgerNameEng: 'Supreme Shrimp Burger',
+    liked: false,
   },
   {
     id: 2,
-    titleKo: '슈비 버거',
-    titleEn: 'Shrimp Beef Burger',
+    burgerName: '슈비 버거',
+    burgerNameEng: 'Shrimp Beef Burger',
+    liked: false,
   },
   {
     id: 3,
-    titleKo: '슈비 버거',
-    titleEn: 'Shrimp Beef Burger',
+    burgerName: '슈비 버거',
+    burgerNameEng: 'Shrimp Beef Burger',
+    liked: false,
   },
   {
     id: 4,
-    titleKo: '슈비 버거',
-    titleEn: 'Shrimp Beef Burger',
+    burgerName: '슈비 버거',
+    burgerNameEng: 'Shrimp Beef Burger',
+    liked: false,
   },
 ];

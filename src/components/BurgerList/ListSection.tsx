@@ -13,34 +13,32 @@ type ListSectionProps = {
 const ListSection = ({
   selectedProduct,
   handleProductTypeSelect,
-}: ListSectionProps) => {
-  return (
-    <section css={S.Section}>
-      <div css={S.ProductCount}>
-        <ListStyle width={4} height={4} />
-        <span>21 Products</span>
-      </div>
+}: ListSectionProps) => (
+  <section css={S.Section}>
+    <div css={S.ProductCount}>
+      <ListStyle width={4} height={4} />
+      <span>21 Products</span>
+    </div>
 
-      <ul css={S.ProductFilterTab}>
-        {PRODUCT_TYPE.map((text) => (
-          <li key={text} onClick={() => handleProductTypeSelect(text)}>
-            <FilterButton
-              menuTitle={text}
-              isHighlighted={selectedProduct === text}
-            />
-          </li>
-        ))}
-      </ul>
+    <ul css={S.ProductFilterTab}>
+      {PRODUCT_TYPE.map((text) => (
+        <li key={text} onClick={() => handleProductTypeSelect(text)}>
+          <FilterButton
+            menuTitle={text}
+            isHighlighted={selectedProduct === text}
+          />
+        </li>
+      ))}
+    </ul>
 
-      <ul css={S.ProductGrid}>
-        {PRODUCT_LIST.map((product) => (
-          <li key={product.id}>
-            <BurgerPost titleKo={product.titleKo} titleEn={product.titleEn} />
-          </li>
-        ))}
-      </ul>
-    </section>
-  );
-};
+    <ul css={S.ProductGrid}>
+      {PRODUCT_LIST.map((product) => (
+        <li key={product.id}>
+          <BurgerPost burgerData={product} />
+        </li>
+      ))}
+    </ul>
+  </section>
+);
 
 export default ListSection;

@@ -1,22 +1,25 @@
 import { useState } from 'react';
 import { BtnDisabled } from '@assets/svgs/likeButton';
 import * as S from './LikeButton.style';
-
+import { useAddFavorite } from '@apis/favorites/queries';
 type LikeButtonProps = {
-  isClicked?: boolean;
+  id: number;
+  liked: boolean;
 };
 
-const LikeButton = ({ isClicked = false }: LikeButtonProps) => {
-  const [isFavorite, setIsFavorite] = useState(isClicked);
+const LikeButton = ({ id, liked }: LikeButtonProps) => {
+  const [isFavorite, setIsFavorite] = useState(liked);
   const [isPressed, setIsPressed] = useState(false);
+  const addFavoriteMutation = useAddFavorite();
 
   const toggleFavorite = () => {
     setIsPressed(true);
-
     setTimeout(() => {
       setIsPressed(false);
       setIsFavorite((prev) => !prev);
     }, 150);
+
+    addFavoriteMutation.mutate(id);
   };
 
   return (

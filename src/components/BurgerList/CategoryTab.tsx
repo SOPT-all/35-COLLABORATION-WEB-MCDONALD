@@ -9,20 +9,18 @@ type CategoryTabProps = {
 const CategoryTab = ({
   selectedCategory,
   handleCategorySelect,
-}: CategoryTabProps) => {
-  return (
-    <ul css={S.Container}>
-      {CATEGORY_LIST.map((text) => (
-        <li
-          key={text}
-          className={selectedCategory === text ? 'selected' : ''}
-          onClick={() => handleCategorySelect(text)}
-        >
-          {text}
-        </li>
-      ))}
-    </ul>
-  );
-};
+}: CategoryTabProps) => (
+  <ul css={S.Container}>
+    {CATEGORY_LIST.map((text) => (
+      <li
+        key={text}
+        className={selectedCategory === text ? 'selected' : ''}
+        onClick={() => handleCategorySelect(text)}
+      >
+        {text}
+      </li>
+    ))}
+  </ul>
+);
 
 export default CategoryTab;
