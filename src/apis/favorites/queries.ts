@@ -4,7 +4,7 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 
 export const useFavorites = () =>
   useQuery<favoriteList[] | null>({
-    queryKey: ['burgerList'],
+    queryKey: ['favorites'],
     queryFn: getFavorites,
     staleTime: 1000 * 60 * 5,
     gcTime: 1000 * 60 * 10,
@@ -18,6 +18,7 @@ export const useAddFavorite = () => {
     mutationFn: addFavorite,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['burgerList'] });
+      queryClient.invalidateQueries({ queryKey: ['favorites'] });
     },
     onError: (error) => error,
   });
