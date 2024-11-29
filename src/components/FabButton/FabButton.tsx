@@ -30,10 +30,7 @@ const FabButton = () => {
   };
 
   return (
-    <div
-      css={isVisible ? S.buttonStyle : S.hiddenButtonStyle}
-      onClick={scrollToTop}
-    >
+    <div css={S.buttonStyle(Number(isVisible))} onClick={scrollToTop}>
       <BtnFabUp width={50} height={50} />
     </div>
   );
