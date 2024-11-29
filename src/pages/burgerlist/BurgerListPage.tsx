@@ -18,14 +18,25 @@ const BurgerListPage = () => {
     setSelectedProduct(product);
   };
 
-  const { data, isLoading } = useBurgerList(selectedCategory, selectedProduct);
+  const { data, isLoading, fetchNextPage, isFetchingNextPage, hasNextPage } =
+    useBurgerList(selectedCategory, selectedProduct);
+
+  const burgerListData = data?.pages.flat() || [];
 
   return (
     <div css={S.Wrapper}>
       <BurgerBanner />
       <CategoryTab {...{ selectedCategory, handleCategorySelect }} />
       <ListSection
-        {...{ selectedProduct, handleProductTypeSelect, data, isLoading }}
+        {...{
+          selectedProduct,
+          handleProductTypeSelect,
+          burgerListData,
+          isLoading,
+          fetchNextPage,
+          isFetchingNextPage,
+          hasNextPage,
+        }}
       />
     </div>
   );

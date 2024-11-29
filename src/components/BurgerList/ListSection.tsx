@@ -1,30 +1,46 @@
+import { useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
+
 import * as S from './ListSection.style';
 import { ListStyle } from '@assets/svgs/burgerList';
 import FilterButton from '@components/FilterButton/FilterButton';
 import BurgerPost from '@components/BurgerPost/BurgerPost';
 import { PRODUCT_TYPE } from '@constants/productFilter';
-import { PRODUCT_LIST } from '@constants/productList'; // API 연결 후 삭제
 import { burgerList } from 'src/types/burgerlist';
 import Skeleton from '@components/common/skeleton/Skeleton';
 
 type ListSectionProps = {
   selectedProduct: string;
   handleProductTypeSelect: (product: string) => void;
-  data: burgerList[] | null | undefined;
+  burgerListData: burgerList[];
   isLoading: boolean;
+  fetchNextPage: () => void;
+  isFetchingNextPage: boolean;
+  hasNextPage: boolean;
 };
 
 const ListSection = ({
   selectedProduct,
   handleProductTypeSelect,
-  data,
+  burgerListData,
   isLoading,
+  fetchNextPage,
+  isFetchingNextPage,
+  hasNextPage,
 }: ListSectionProps) => {
+  const { ref, inView } = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      fetchNextPage();
+    }
+  }, [inView]);
+
   return (
     <section css={S.Section}>
       <div css={S.ProductCount}>
         <ListStyle width={4} height={4} />
-        <span>21 Products</span>
+        <span>{burgerListData?.length} Products</span>
       </div>
 
       <ul css={S.ProductFilterTab}>
@@ -48,11 +64,22 @@ const ListSection = ({
             <Skeleton width="100%" height="25.4rem" borderRadius="10px" />
           </>
         ) : (
-          data?.map((product) => (
+          burgerListData?.map((product) => (
             <li key={product.id}>
               <BurgerPost burgerData={product} />
             </li>
           ))
+        )}
+
+        {isFetchingNextPage ? (
+          <>
+            <Skeleton width="100%" height="25.4rem" borderRadius="10px" />
+            <Skeleton width="100%" height="25.4rem" borderRadius="10px" />
+          </>
+        ) : (
+          hasNextPage && (
+            <li ref={ref} style={{ width: '100%', height: '2rem' }} />
+          )
         )}
       </ul>
     </section>
