@@ -24,7 +24,7 @@ const Carousel = () => {
         left: scrollWidth,
         behavior: 'auto',
       });
-      // DOM 위치가 잡힌 뒤에 초기화 상태를 true로 업데이트
+
       setTimeout(() => {
         setIsInitialized(true);
       }, 0);
