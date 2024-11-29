@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import * as S from './BurgerDetailPage.style';
-import { Ellipse, Cimg11, IcMinus, IcPlus } from '@assets/svgs/detail';
+import { Ellipse, IcMinus, IcPlus } from '@assets/svgs/detail';
 import NutritionTable from '@components/BurgerDetail/NutritionTable';
 import Spacing from '@components/common/spacing/Spacing';
 import { IcNext, IcPrev } from '@assets/svgs';
 import { formatName } from './../../utils/formatName';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDetail } from '@apis/details/queries';
+import { DETAIL_LIST } from '@constants/detailList';
 
 const BurgerDetailPage = () => {
   const [activeIndex, setActiveIndex] = useState<number[]>([]);
@@ -50,6 +51,8 @@ const BurgerDetailPage = () => {
     }
   };
 
+  const BurgerImg = burger_id && DETAIL_LIST[Number(burger_id)];
+
   return (
     <main>
       {data && (
@@ -61,7 +64,7 @@ const BurgerDetailPage = () => {
               <Spacing size="1" />
               <div css={S.burgerImg}>
                 <IcPrev css={S.buttonStyle('left')} onClick={movePrev} />
-                <Cimg11 width={346} />
+                {BurgerImg ? <BurgerImg width={346} /> : <></>}
                 <IcNext css={S.buttonStyle('right')} onClick={moveNext} />
               </div>
             </div>
