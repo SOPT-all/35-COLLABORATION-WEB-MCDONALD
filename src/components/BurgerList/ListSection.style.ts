@@ -26,3 +26,8 @@ export const ProductGrid = () => css`
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 `;
+
+export const ListEndView = () => css`
+  width: 100%;
+  height: 2rem;
+`;

@@ -1,5 +1,5 @@
 import * as S from './CategoryTab.style';
-import { CATEGORY_LIST } from '@constants/productFilter';
+import { CATEGORY } from '@constants/productFilter';
 
 type CategoryTabProps = {
   selectedCategory: string;
@@ -9,18 +9,20 @@ type CategoryTabProps = {
 const CategoryTab = ({
   selectedCategory,
   handleCategorySelect,
-}: CategoryTabProps) => (
-  <ul css={S.Container}>
-    {CATEGORY_LIST.map((text) => (
-      <li
-        key={text}
-        className={selectedCategory === text ? 'selected' : ''}
-        onClick={() => handleCategorySelect(text)}
-      >
-        {text}
-      </li>
-    ))}
-  </ul>
-);
+}: CategoryTabProps) => {
+  return (
+    <ul css={S.Container}>
+      {CATEGORY.map((list) => (
+        <li
+          key={list.label}
+          className={selectedCategory === list.query ? 'selected' : ''}
+          onClick={() => handleCategorySelect(list.query)}
+        >
+          {list.label}
+        </li>
+      ))}
+    </ul>
+  );
+};
 
 export default CategoryTab;
