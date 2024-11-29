@@ -7,9 +7,8 @@ export const ListSection = () => css`
 export const Banner = (theme: Theme) => css`
   display: flex;
   align-items: center;
-  width: 37.5rem;
-  height: 16.6rem;
-  background: ${theme.colors.Blackgrad};
+  width: 100%;
+
   .banner__title {
     position: absolute;
     left: 1.2rem;
@@ -23,6 +22,7 @@ export const ProductCount = (theme: Theme) => css`
   align-items: center;
   gap: 1rem;
   margin-top: 3.8rem;
+  margin-left: 1.5rem;
   color: ${theme.colors.gray700};
   ${theme.fonts.title06};
 `;

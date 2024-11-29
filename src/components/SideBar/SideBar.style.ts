@@ -4,7 +4,8 @@ export const Wrapper = (isOpen: boolean) => css`
   position: fixed;
   top: 6.2rem;
   overflow-x: hidden;
-  width: 37.5rem;
+  max-width: 42.5rem;
+  width: 100%;
   height: calc(100vh - 6.2rem);
 
   visibility: ${isOpen ? 'visible' : 'hidden'};
