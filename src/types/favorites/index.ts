@@ -3,6 +3,7 @@ export interface favoriteList {
   burgerName: string;
   burgerNameEng: string;
   liked: boolean;
+  isLiked: boolean;
 }
 
 export interface favoriteResponse {

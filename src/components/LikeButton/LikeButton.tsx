@@ -2,34 +2,65 @@ import { useState } from 'react';
 import { BtnDisabled } from '@assets/svgs/likeButton';
 import * as S from './LikeButton.style';
 import { useAddFavorite } from '@apis/favorites/queries';
+
 type LikeButtonProps = {
   id: number;
   liked: boolean;
+  isLiked: boolean;
 };
 
-const LikeButton = ({ id, liked }: LikeButtonProps) => {
-  const [isFavorite, setIsFavorite] = useState(liked);
+const LikeButton = ({ id, liked, isLiked }: LikeButtonProps) => {
+  const [isFavorite, setIsFavorite] = useState(liked || isLiked);
   const [isPressed, setIsPressed] = useState(false);
+  const [isProcessing, setIsProcessing] = useState(false);
   const addFavoriteMutation = useAddFavorite();
 
-  const toggleFavorite = () => {
-    setIsPressed(true);
-    setTimeout(() => {
-      setIsPressed(false);
-      setIsFavorite((prev) => !prev);
-    }, 150);
+  const toggleFavorite = (event: React.MouseEvent<HTMLDivElement>) => {
+    event.stopPropagation();
 
-    addFavoriteMutation.mutate(id);
+    if (isProcessing) return;
+
+    setIsFavorite((prev) => !prev);
+    setIsProcessing(true);
+
+    setIsPressed(true);
+    setTimeout(() => setIsPressed(false), 150);
+
+    addFavoriteMutation.mutate(id, {
+      onSuccess: () => {
+        setIsProcessing(false);
+      },
+      onError: () => {
+        setIsFavorite((prev) => !prev);
+        setIsProcessing(false);
+      },
+    });
   };
 
   return (
-    <div onClick={toggleFavorite} css={S.LikeButton}>
+    <div
+      onClick={toggleFavorite}
+      style={{
+        cursor: isProcessing ? 'not-allowed' : 'pointer',
+        pointerEvents: isProcessing ? 'none' : 'auto',
+      }}
+    >
       {isPressed ? (
-        <BtnDisabled rectFill="gray" pathFill="#fff" stroke="none" />
+        <BtnDisabled
+          css={S.LikeButton}
+          rectFill="gray"
+          pathFill="#fff"
+          stroke="none"
+        />
       ) : isFavorite ? (
-        <BtnDisabled rectFill="#fff" pathFill="#DB0006" stroke="none" />
+        <BtnDisabled
+          css={S.LikeButton}
+          rectFill="#fff"
+          pathFill="#DB0006"
+          stroke="none"
+        />
       ) : (
-        <BtnDisabled rectFill="#fff" pathFill="none" />
+        <BtnDisabled css={S.LikeButton} rectFill="#fff" pathFill="none" />
       )}
     </div>
   );

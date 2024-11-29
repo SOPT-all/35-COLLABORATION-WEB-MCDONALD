@@ -7,8 +7,8 @@ type BurgerPostProps = {
     id: number;
     burgerName: string;
     burgerNameEng: string;
-    isLike?: boolean;
     liked?: boolean;
+    isLiked?: boolean;
   };
   navDetail: (id: number) => void;
 };
@@ -20,7 +20,11 @@ const BurgerPost = ({ burgerData, navDetail }: BurgerPostProps) => {
     <div css={S.postStyleContainer} onClick={() => navDetail(burgerData.id)}>
       <section css={S.imageSection}>
         {BurgerImg ? <BurgerImg /> : <></>}
-        <LikeButton isClicked={false} />
+        <LikeButton
+          id={burgerData.id}
+          liked={burgerData.liked ?? false}
+          isLiked={burgerData.isLiked ?? false}
+        />
       </section>
       <section css={S.titleSection}>
         <p className="title__ko">{burgerData.burgerName}</p>
