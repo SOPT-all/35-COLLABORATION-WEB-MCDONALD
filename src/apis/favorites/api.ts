@@ -12,3 +12,14 @@ export const getFavorites = async (): Promise<favoriteList[] | null> => {
     return null;
   }
 };
+
+export const addFavorite = async (burgerId: number): Promise<boolean> => {
+  try {
+    const response: AxiosResponse<{ success: boolean }> = await instance.post(
+      `/favorites/${burgerId}`,
+    );
+    return response.data.success;
+  } catch {
+    return false;
+  }
+};
