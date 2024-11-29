@@ -11,6 +11,6 @@ export const useBurgerList = (type: string, category: string) =>
     staleTime: 1000 * 60 * 5, // 5분
     gcTime: 1000 * 60 * 10, // 10분
     retry: 3, // 실패 시 재시도 횟수
-    refetchOnWindowFocus: true,
+    refetchOnWindowFocus: false,
     initialPageParam: 0,
   });
