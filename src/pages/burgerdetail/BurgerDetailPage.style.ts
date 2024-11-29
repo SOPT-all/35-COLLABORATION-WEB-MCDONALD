@@ -53,13 +53,14 @@ export const burgerImg = css`
   z-index: 2;
 `;
 
-export const buttonStyle = (position: string) => css`
+export const buttonStyle = (position: string, visible: boolean) => css`
   position: absolute;
   top: 50%;
   ${position}: 0;
   width: 4rem;
   height: 4.5rem;
   transform: translateY(-50%);
+  visibility: ${visible ? 'visible' : 'hidden'};
 `;
 
 export const info = (theme: Theme) => css`

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import * as S from './BurgerDetailPage.style';
 import { Ellipse, IcMinus, IcPlus } from '@assets/svgs/detail';
 import NutritionTable from '@components/BurgerDetail/NutritionTable';
@@ -11,9 +11,18 @@ import { DETAIL_LIST } from '@constants/detailList';
 
 const BurgerDetailPage = () => {
   const [activeIndex, setActiveIndex] = useState<number[]>([]);
+  const [prevVisible, setPrevVisible] = useState<boolean>(true);
+  const [nextVisible, setNextVisible] = useState<boolean>(true);
   const { burger_id } = useParams();
   const { data, isLoading, error } = useDetail(Number(burger_id));
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const currentId = Number(burger_id);
+
+    setPrevVisible(currentId > 1);
+    setNextVisible(currentId < 42);
+  }, [burger_id]);
 
   if (isLoading) {
     return <span>Loading...</span>;
@@ -36,8 +45,6 @@ const BurgerDetailPage = () => {
 
     if (!isNaN(currentId) && currentId > 1) {
       navigate(`/detail/${currentId - 1}`);
-    } else {
-      alert('첫 페이지입니다.');
     }
   };
 
@@ -46,8 +53,6 @@ const BurgerDetailPage = () => {
 
     if (!isNaN(currentId) && currentId < 42) {
       navigate(`/detail/${currentId + 1}`);
-    } else {
-      alert('마지막 페이지입니다.');
     }
   };
 
@@ -63,9 +68,15 @@ const BurgerDetailPage = () => {
               <div className="english">{formatName(data.burger_name_eng)}</div>
               <Spacing size="1" />
               <div css={S.burgerImg}>
-                <IcPrev css={S.buttonStyle('left')} onClick={movePrev} />
+                <IcPrev
+                  css={S.buttonStyle('left', prevVisible)}
+                  onClick={movePrev}
+                />
                 {BurgerImg ? <BurgerImg width={346} /> : <></>}
-                <IcNext css={S.buttonStyle('right')} onClick={moveNext} />
+                <IcNext
+                  css={S.buttonStyle('right', nextVisible)}
+                  onClick={moveNext}
+                />
               </div>
             </div>
 
