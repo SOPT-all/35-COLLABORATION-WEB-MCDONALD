@@ -5,9 +5,10 @@ import NutritionTable from '@components/BurgerDetail/NutritionTable';
 import Spacing from '@components/common/spacing/Spacing';
 import { IcNext, IcPrev } from '@assets/svgs';
 import { formatName } from './../../utils/formatName';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useDetail } from '@apis/details/queries';
 import { DETAIL_LIST } from '@constants/detailList';
+import { burgerList } from 'src/types/burgerlist';
 
 const BurgerDetailPage = () => {
   const [activeIndex, setActiveIndex] = useState<number[]>([]);
@@ -16,6 +17,7 @@ const BurgerDetailPage = () => {
   const { burger_id } = useParams();
   const { data, isLoading, error } = useDetail(Number(burger_id));
   const navigate = useNavigate();
+  const { state } = useLocation();
 
   useEffect(() => {
     const currentId = Number(burger_id);
@@ -41,18 +43,26 @@ const BurgerDetailPage = () => {
     );
 
   const movePrev = () => {
+    if (!state) return;
     const currentId = Number(burger_id);
+    const currentIndex = state.findIndex(
+      (burger: burgerList) => burger.id === currentId,
+    );
 
-    if (!isNaN(currentId) && currentId > 1) {
-      navigate(`/detail/${currentId - 1}`);
+    if (currentIndex > 0) {
+      navigate(`/detail/${state[currentIndex - 1].id}`, { state });
     }
   };
 
   const moveNext = () => {
+    if (!state) return;
     const currentId = Number(burger_id);
+    const currentIndex = state.findIndex(
+      (burger: burgerList) => burger.id === currentId,
+    );
 
-    if (!isNaN(currentId) && currentId < 42) {
-      navigate(`/detail/${currentId + 1}`);
+    if (currentIndex < state.length - 1) {
+      navigate(`/detail/${state[currentIndex + 1].id}`, { state });
     }
   };
 
