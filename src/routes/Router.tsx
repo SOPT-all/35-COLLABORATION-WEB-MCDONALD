@@ -1,9 +1,15 @@
+import { lazy } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
-import BurgerDetailPage from '@pages/burgerdetail/BurgerDetailPage';
-import Main from '@pages/main/Main';
-import Layout from '@layouts/Layout';
-import BurgerListPage from '@pages/burgerlist/BurgerListPage';
-import FavoriteListPage from '@pages/favoriteList/FavoriteListPage';
+
+const Layout = lazy(() => import('@layouts/Layout'));
+const Main = lazy(() => import('@pages/main/Main'));
+const BurgerDetailPage = lazy(
+  () => import('@pages/burgerdetail/BurgerDetailPage'),
+);
+const BurgerListPage = lazy(() => import('@pages/burgerlist/BurgerListPage'));
+const FavoriteListPage = lazy(
+  () => import('@pages/favoriteList/FavoriteListPage'),
+);
 
 const router = createBrowserRouter([
   {

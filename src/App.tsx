@@ -5,6 +5,7 @@ import theme from './styles/theme';
 import GlobalStyle from './styles/global';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { Suspense } from 'react';
 
 const App = () => {
   const queryClient = new QueryClient();
@@ -12,7 +13,9 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
         <Global styles={GlobalStyle} />
-        <RouterProvider router={router} />
+        <Suspense fallback={<></>}>
+          <RouterProvider router={router} />
+        </Suspense>
       </ThemeProvider>
       <div style={{ fontSize: '16px' }}>
         <ReactQueryDevtools initialIsOpen={false} />
