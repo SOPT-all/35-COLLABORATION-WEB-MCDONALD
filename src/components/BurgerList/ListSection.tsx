@@ -6,31 +6,28 @@ import * as S from './ListSection.style';
 import { ListStyle } from '@assets/svgs/burgerList';
 import FilterButton from '@components/FilterButton/FilterButton';
 import BurgerPost from '@components/BurgerPost/BurgerPost';
-import { PRODUCT_TYPE } from '@constants/productFilter';
-import { burgerList } from 'src/types/burgerlist';
 import Skeleton from '@components/common/skeleton/Skeleton';
+import { PRODUCT_TYPE } from '@constants/productFilter';
+import { useBurgerList } from '@apis/burgerlist/queries';
 
 type ListSectionProps = {
+  selectedCategory: string;
   selectedProduct: string;
   handleProductTypeSelect: (product: string) => void;
-  burgerListData: burgerList[];
-  isLoading: boolean;
-  fetchNextPage: () => void;
-  isFetchingNextPage: boolean;
-  hasNextPage: boolean;
 };
 
 const ListSection = ({
+  selectedCategory,
   selectedProduct,
   handleProductTypeSelect,
-  burgerListData,
-  isLoading,
-  fetchNextPage,
-  isFetchingNextPage,
-  hasNextPage,
 }: ListSectionProps) => {
   const { ref, inView } = useInView();
   const navigate = useNavigate();
+
+  const { data, isLoading, fetchNextPage, isFetchingNextPage, hasNextPage } =
+    useBurgerList(selectedCategory, selectedProduct);
+
+  const burgerListData = data?.pages.flat() || [];
 
   useEffect(() => {
     if (inView) {
@@ -83,9 +80,7 @@ const ListSection = ({
             <Skeleton width="100%" height="25.4rem" borderRadius="10px" />
           </>
         ) : (
-          hasNextPage && (
-            <li ref={ref} style={{ width: '100%', height: '2rem' }} />
-          )
+          hasNextPage && <li ref={ref} css={S.ListEndView} />
         )}
       </ul>
     </section>
