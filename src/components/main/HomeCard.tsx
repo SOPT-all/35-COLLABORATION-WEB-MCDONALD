@@ -3,15 +3,14 @@ import * as S from './HomeCard.style';
 import { calculateLine } from '@utils/calculateLine';
 
 export interface HomeCardProps {
-  img: React.ReactNode;
-  title: string;
+  img?: React.ReactNode;
+  title?: string;
 }
 
 const HomeCard = ({ img, title }: HomeCardProps) => {
   const titleRef = useRef<HTMLParagraphElement>(null);
   const [isThreeLines, setIsThreeLines] = useState(false);
   const [isCalculated, setIsCalculated] = useState(false);
-  const isDataValid = img && title;
 
   useEffect(() => {
     if (titleRef.current) {
@@ -21,18 +20,23 @@ const HomeCard = ({ img, title }: HomeCardProps) => {
     }
   }, [title]);
 
+  if (!img || !title || !isCalculated) {
+    return (
+      <section css={S.CardStyle}>
+        <div css={S.ImgStyle}>
+          <div css={S.SkeletonImg} />
+        </div>
+        <div css={S.SkeletonText}>
+          <p ref={titleRef}></p>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section css={S.CardStyle}>
-      <div css={S.ImgStyle}>
-        {isCalculated && isDataValid ? img : <div css={S.SkeletonImg} />}
-      </div>
-      <div
-        css={
-          isCalculated && isDataValid
-            ? S.TitleStyle(isThreeLines)
-            : S.SkeletonText
-        }
-      >
+      <div css={S.ImgStyle}>{img}</div>
+      <div css={S.TitleStyle(isThreeLines)}>
         <p ref={titleRef}>{title}</p>
       </div>
     </section>
