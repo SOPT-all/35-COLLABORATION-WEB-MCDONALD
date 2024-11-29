@@ -17,6 +17,7 @@ export const titleStyle = (theme: Theme) => css`
     color: ${theme.colors.gray700};
     text-align: center;
     z-index: 2;
+    word-break: keep-all;
 
     span {
       position: relative;
