@@ -20,7 +20,9 @@ const GlobalStyle = (theme: Theme) => css`
 
   #root {
     position: relative;
-    width: 375px;
+    max-width: 425px;
+    width: 100%;
+    margin: 0 auto;
   }
 `;
 

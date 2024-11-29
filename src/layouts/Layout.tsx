@@ -5,10 +5,14 @@ import BottomNav from '@components/BottomNav/BottomNav';
 import { Outlet } from 'react-router-dom';
 import { css } from '@emotion/react';
 import FabButton from '@components/FabButton/FabButton';
+import useScrollToTop from 'src/hooks/useScrollToTop';
 
-const Layout = () => (
-  <>
-    <div css={layoutStyle}>
+const Layout = () => {
+  useScrollToTop();
+
+  return (
+    <>
+      <div css={layoutStyle}>
       <Header />
       <Spacing size="6.2" />
       <Outlet />
@@ -17,7 +21,8 @@ const Layout = () => (
     <BottomNav />
     <Footer />
   </>
-);
+  );
+};
 
 export default Layout;
 

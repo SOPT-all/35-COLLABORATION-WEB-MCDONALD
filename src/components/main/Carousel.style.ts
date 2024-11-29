@@ -4,12 +4,12 @@ export const CarouselLayout = () => css`
   position: relative;
 
   width: 100%;
-  height: 45rem;
 `;
 
-export const CarouselStyle = () => css`
+export const CarouselStyle = (isInitialized: boolean) => css`
   display: flex;
   overflow: hidden;
+  visibility: ${isInitialized ? 'visible' : 'hidden'};
 `;
 
 export const CarouselItemStyle = () => css`

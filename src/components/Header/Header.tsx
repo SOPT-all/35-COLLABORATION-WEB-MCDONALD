@@ -38,7 +38,7 @@ const Header = () => {
     <>
       <header css={S.HeaderContainer(isLine)}>
         {isDetailPage ? (
-          <section css={S.BackNav} onClick={() => navigate(-1)}>
+          <section css={S.BackNav} onClick={() => navigate('/list')}>
             <CmpBtnBack width={10.5} height={22} />
             <span>List</span>
           </section>

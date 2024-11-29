@@ -17,6 +17,7 @@ export const titleStyle = (theme: Theme) => css`
     color: ${theme.colors.gray700};
     text-align: center;
     z-index: 2;
+    word-break: keep-all;
 
     span {
       position: relative;
@@ -52,13 +53,14 @@ export const burgerImg = css`
   z-index: 2;
 `;
 
-export const buttonStyle = (position: string) => css`
+export const buttonStyle = (position: string, visible: boolean) => css`
   position: absolute;
   top: 50%;
   ${position}: 0;
   width: 4rem;
   height: 4.5rem;
   transform: translateY(-50%);
+  visibility: ${visible ? 'visible' : 'hidden'};
 `;
 
 export const info = (theme: Theme) => css`
@@ -75,13 +77,15 @@ export const info = (theme: Theme) => css`
   word-break: keep-all;
 `;
 
+export const listStyle = () => css`
+  padding: 7.2rem 1.6rem 7rem;
+`;
+
 export const questionStyle = () => css`
   cursor: pointer;
 `;
 
 export const nutrition = (theme: Theme) => css`
-  padding-top: 7.2rem;
-
   .nutritionQuestion {
     display: flex;
     align-items: center;
@@ -178,8 +182,6 @@ export const allergy = (theme: Theme) => css`
 `;
 
 export const origin = (theme: Theme) => css`
-  padding-bottom: 7rem;
-
   .originQuestion {
     display: flex;
     align-items: center;
