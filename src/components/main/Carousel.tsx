@@ -7,6 +7,7 @@ import Progress from './Progress';
 const Carousel = () => {
   const containerRef = useRef<HTMLUListElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isInitialized, setIsInitialized] = useState(false);
 
   // 무한 캐러셀 배열
   const infiniteCarousel = [
@@ -23,6 +24,10 @@ const Carousel = () => {
         left: scrollWidth,
         behavior: 'auto',
       });
+      // DOM 위치가 잡힌 뒤에 초기화 상태를 true로 업데이트
+      setTimeout(() => {
+        setIsInitialized(true);
+      }, 0);
     }
   }, []);
 
@@ -62,7 +67,7 @@ const Carousel = () => {
         css={S.ButtonStyle('left')}
         onClick={() => handleScroll('left')}
       />
-      <ul css={S.CarouselStyle} ref={containerRef}>
+      <ul css={S.CarouselStyle(isInitialized)} ref={containerRef}>
         {infiniteCarousel.map((item, index) => (
           <li key={`${item.id}-${index}`} css={S.CarouselItemStyle}>
             {item.img}

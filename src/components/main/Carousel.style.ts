@@ -7,9 +7,10 @@ export const CarouselLayout = () => css`
   height: 45rem;
 `;
 
-export const CarouselStyle = () => css`
+export const CarouselStyle = (isInitialized: boolean) => css`
   display: flex;
   overflow: hidden;
+  visibility: ${isInitialized ? 'visible' : 'hidden'};
 `;
 
 export const CarouselItemStyle = () => css`
