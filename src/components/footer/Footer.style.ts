@@ -6,24 +6,22 @@ export const footerStyle = (theme: Theme) => css`
   flex-direction: column;
   position: relative;
   transform: translateY(-100%);
-  width: 37.5rem;
-  height: 62.4rem;
-  padding: 0 1.5rem;
+  width: 100%;
+  padding: 0 1.5rem 8.4rem;
   background-color: ${theme.colors.gray700};
 
   ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    width: 34.5rem;
+    width: 100%;
     height: 16.1rem;
-    max-width: 34.5rem;
     margin-top: 3.3rem;
     align-items: center;
     border-bottom: 1px solid ${theme.colors.gray500};
   }
 
   ul li {
-    width: 17.2rem;
+    width: 100%;
     height: 3.6rem;
     padding: 0.775rem 0;
     ${theme.fonts.body09}
@@ -41,7 +39,7 @@ export const footerStyle = (theme: Theme) => css`
   .middle {
     display: flex;
     flex-direction: column;
-    width: 34.5rem;
+    width: 100%;
     padding: 3rem 0;
     border-bottom: 1px solid ${theme.colors.gray500};
     align-items: flex-start;

@@ -23,23 +23,13 @@ const LikeButton = ({ id, liked }: LikeButtonProps) => {
   };
 
   return (
-    <div onClick={toggleFavorite} style={{ cursor: 'pointer' }}>
+    <div onClick={toggleFavorite} css={S.LikeButton}>
       {isPressed ? (
-        <BtnDisabled
-          css={S.LikeButton}
-          rectFill="gray"
-          pathFill="#fff"
-          stroke="none"
-        />
+        <BtnDisabled rectFill="gray" pathFill="#fff" stroke="none" />
       ) : isFavorite ? (
-        <BtnDisabled
-          css={S.LikeButton}
-          rectFill="#fff"
-          pathFill="#DB0006"
-          stroke="none"
-        />
+        <BtnDisabled rectFill="#fff" pathFill="#DB0006" stroke="none" />
       ) : (
-        <BtnDisabled css={S.LikeButton} rectFill="#fff" pathFill="none" />
+        <BtnDisabled rectFill="#fff" pathFill="none" />
       )}
     </div>
   );

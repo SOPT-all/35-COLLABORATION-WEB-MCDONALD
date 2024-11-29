@@ -3,9 +3,9 @@ import { css } from '@emotion/react';
 
 export const ProgressLayout = () => css`
   position: absolute;
-  bottom: 3.1rem;
-  left: 8.1rem;
-  right: 8.4rem;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, 0);
   display: flex;
   align-items: center;
   gap: 1.1rem;
