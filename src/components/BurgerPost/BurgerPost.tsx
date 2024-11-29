@@ -1,3 +1,4 @@
+import LikeButton from '@components/LikeButton/LikeButton';
 import * as S from './BurgerPost.style';
 import { PRODUCT_LIST } from '@constants/productList';
 
@@ -19,7 +20,10 @@ const BurgerPost = ({ burgerData, navDetail }: BurgerPostProps) => {
     <div css={S.postStyleContainer} onClick={() => navDetail(burgerData.id)}>
       <section css={S.imageSection}>
         {BurgerImg ? <BurgerImg /> : <></>}
-        liked={burgerData.liked ?? burgerData.isLike ?? false}
+        <LikeButton
+          id={burgerData.id}
+          liked={burgerData.liked ?? burgerData.isLike ?? false}
+        />{' '}
       </section>
       <section css={S.titleSection}>
         <p className="title__ko">{burgerData.burgerName}</p>

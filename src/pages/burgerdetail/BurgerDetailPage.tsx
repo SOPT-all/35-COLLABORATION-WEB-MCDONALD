@@ -21,10 +21,13 @@ const BurgerDetailPage = () => {
 
   useEffect(() => {
     const currentId = Number(burger_id);
+    const currentIndex = state?.findIndex(
+      (burger: burgerList) => burger.id === currentId,
+    );
 
-    setPrevVisible(currentId > 1);
-    setNextVisible(currentId < 42);
-  }, [burger_id]);
+    setPrevVisible(currentIndex > 0);
+    setNextVisible(currentIndex < state?.length - 1);
+  }, [burger_id, state]);
 
   if (isLoading) {
     return <span>Loading...</span>;
