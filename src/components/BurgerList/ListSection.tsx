@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
 
 import * as S from './ListSection.style';
@@ -29,12 +30,17 @@ const ListSection = ({
   hasNextPage,
 }: ListSectionProps) => {
   const { ref, inView } = useInView();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (inView) {
       fetchNextPage();
     }
   }, [inView]);
+
+  const navDetail = (id: number): void => {
+    navigate(`/detail/${id}`, { state: burgerListData });
+  };
 
   return (
     <section css={S.Section}>
@@ -66,7 +72,7 @@ const ListSection = ({
         ) : (
           burgerListData?.map((product) => (
             <li key={product.id}>
-              <BurgerPost burgerData={product} />
+              <BurgerPost burgerData={product} navDetail={navDetail} />
             </li>
           ))
         )}

@@ -10,13 +10,14 @@ type BurgerPostProps = {
     isLike?: boolean;
     liked?: boolean;
   };
+  navDetail: (id: number) => void;
 };
 
-const BurgerPost = ({ burgerData }: BurgerPostProps) => {
+const BurgerPost = ({ burgerData, navDetail }: BurgerPostProps) => {
   const BurgerImg = PRODUCT_LIST[burgerData.id];
 
   return (
-    <div css={S.postStyleContainer}>
+    <div css={S.postStyleContainer} onClick={() => navDetail(burgerData.id)}>
       <section css={S.imageSection}>
         {BurgerImg ? <BurgerImg /> : <></>}
         <LikeButton isClicked={false} />
