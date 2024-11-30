@@ -1,5 +1,5 @@
-import * as S from './BurgerPost.style';
 import LikeButton from '@components/LikeButton/LikeButton';
+import * as S from './BurgerPost.style';
 import { PRODUCT_LIST } from '@constants/productList';
 
 type BurgerPostProps = {
@@ -22,8 +22,7 @@ const BurgerPost = ({ burgerData, navDetail }: BurgerPostProps) => {
         {BurgerImg ? <BurgerImg /> : <></>}
         <LikeButton
           id={burgerData.id}
-          liked={burgerData.liked ?? false}
-          isLiked={burgerData.isLiked ?? false}
+          liked={burgerData.liked ?? burgerData.isLiked ?? false}
         />
       </section>
       <section css={S.titleSection}>

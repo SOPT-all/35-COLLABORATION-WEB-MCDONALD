@@ -6,11 +6,9 @@ import { useAddFavorite } from '@apis/favorites/queries';
 type LikeButtonProps = {
   id: number;
   liked: boolean;
-  isLiked: boolean;
 };
 
-const LikeButton = ({ id, liked, isLiked }: LikeButtonProps) => {
-  const [isFavorite, setIsFavorite] = useState(liked || isLiked);
+const LikeButton = ({ id, liked }: LikeButtonProps) => {
   const [isPressed, setIsPressed] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
   const addFavoriteMutation = useAddFavorite();
@@ -20,18 +18,13 @@ const LikeButton = ({ id, liked, isLiked }: LikeButtonProps) => {
 
     if (isProcessing) return;
 
-    setIsFavorite((prev) => !prev);
     setIsProcessing(true);
 
     setIsPressed(true);
     setTimeout(() => setIsPressed(false), 150);
 
     addFavoriteMutation.mutate(id, {
-      onSuccess: () => {
-        setIsProcessing(false);
-      },
-      onError: () => {
-        setIsFavorite((prev) => !prev);
+      onSettled: () => {
         setIsProcessing(false);
       },
     });
@@ -52,7 +45,7 @@ const LikeButton = ({ id, liked, isLiked }: LikeButtonProps) => {
           pathFill="#fff"
           stroke="none"
         />
-      ) : isFavorite ? (
+      ) : liked ? (
         <BtnDisabled
           css={S.LikeButton}
           rectFill="#fff"

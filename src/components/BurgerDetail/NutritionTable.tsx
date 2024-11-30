@@ -1,16 +1,30 @@
 export interface NutritionProps {
-  nutrition: {
-    weight_g: number;
+  nutritionContent: {
+    weightG: number | null;
+    weightML: number;
     calories: number;
     sugar: number;
     protein: number;
-    saturated_fat: number;
+    saturatedFat: number;
     sodium: number;
-    caffeine: number | null;
+    caffeine: number;
+  };
+  nutrition_reference: {
+    weightG: number | null;
+    weightML: number;
+    calories: number;
+    sugar: number;
+    protein: number;
+    saturatedFat: number;
+    sodium: number;
+    caffeine: number;
   };
 }
 
-const NutritionTable = ({ nutrition }: NutritionProps) => (
+const NutritionTable = ({
+  nutritionContent,
+  nutrition_reference,
+}: NutritionProps) => (
   <table>
     <thead>
       <tr>
@@ -22,43 +36,63 @@ const NutritionTable = ({ nutrition }: NutritionProps) => (
     <tbody>
       <tr>
         <td>중량(g)</td>
-        <td>{nutrition.weight_g}g</td>
-        <td>-</td>
+        <td>{nutritionContent.weightG}g</td>
+        <td>
+          {nutrition_reference.weightG ? `${nutritionContent.weightG}%` : '-'}
+        </td>
       </tr>
       <tr>
         <td>중량(ml)</td>
-        <td>-</td>
-        <td>-</td>
+        <td>{nutritionContent.weightML}g</td>
+        <td>
+          {nutrition_reference.weightML ? `${nutritionContent.weightML}%` : '-'}
+        </td>
       </tr>
       <tr>
         <td>열량</td>
-        <td>{nutrition.calories}kcal</td>
-        <td>-</td>
+        <td>{nutritionContent.calories}kcal</td>
+        <td>
+          {nutrition_reference.calories ? `${nutritionContent.calories}%` : '-'}
+        </td>
       </tr>
       <tr>
         <td>당</td>
-        <td>{nutrition.sugar}g</td>
-        <td>10%</td>
+        <td>{nutritionContent.sugar}g</td>
+        <td>
+          {nutrition_reference.sugar ? `${nutritionContent.sugar}%` : '-'}
+        </td>
       </tr>
       <tr>
         <td>단백질</td>
-        <td>{nutrition.protein}g</td>
-        <td>69%</td>
+        <td>{nutritionContent.protein}g</td>
+        <td>
+          {nutrition_reference.protein ? `${nutritionContent.protein}%` : '-'}
+        </td>
       </tr>
       <tr>
         <td>포화지방</td>
-        <td>{nutrition.saturated_fat}g</td>
-        <td>30%</td>
+        <td>{nutritionContent.saturatedFat}g</td>
+        <td>
+          {nutrition_reference.saturatedFat
+            ? `${nutritionContent.saturatedFat}%`
+            : '-'}
+        </td>
       </tr>
       <tr>
         <td>나트륨</td>
-        <td>{nutrition.sodium}mg</td>
-        <td>89%</td>
+        <td>{nutritionContent.sodium}mg</td>
+        <td>
+          {nutrition_reference.sodium ? `${nutritionContent.sodium}%` : '-'}
+        </td>
       </tr>
       <tr>
         <td>카페인</td>
-        <td>{nutrition.caffeine ? `${nutrition.caffeine}mg` : '-'}</td>
-        <td>-</td>
+        <td>
+          {nutritionContent.caffeine ? `${nutritionContent.caffeine}mg` : '-'}
+        </td>
+        <td>
+          {nutrition_reference.caffeine ? `${nutritionContent.caffeine}%` : '-'}
+        </td>
       </tr>
     </tbody>
   </table>
