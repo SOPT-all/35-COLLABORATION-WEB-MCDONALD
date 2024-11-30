@@ -13,14 +13,14 @@ const Layout = () => {
   return (
     <>
       <div css={layoutStyle}>
-      <Header />
-      <Spacing size="6.2" />
-      <Outlet />
-      <FabButton />
-    </div>
-    <BottomNav />
-    <Footer />
-  </>
+        <Header />
+        <Spacing size="6.2" />
+        <Outlet />
+        <FabButton />
+      </div>
+      <BottomNav />
+      <Footer />
+    </>
   );
 };
 

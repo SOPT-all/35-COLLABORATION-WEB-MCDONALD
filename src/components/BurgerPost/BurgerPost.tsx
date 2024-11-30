@@ -7,8 +7,8 @@ type BurgerPostProps = {
     id: number;
     burgerName: string;
     burgerNameEng: string;
-    isLike?: boolean;
     liked?: boolean;
+    isLiked?: boolean;
   };
   navDetail: (id: number) => void;
 };
@@ -22,8 +22,8 @@ const BurgerPost = ({ burgerData, navDetail }: BurgerPostProps) => {
         {BurgerImg ? <BurgerImg /> : <></>}
         <LikeButton
           id={burgerData.id}
-          liked={burgerData.liked ?? burgerData.isLike ?? false}
-        />{' '}
+          liked={burgerData.liked ?? burgerData.isLiked ?? false}
+        />
       </section>
       <section css={S.titleSection}>
         <p className="title__ko">{burgerData.burgerName}</p>

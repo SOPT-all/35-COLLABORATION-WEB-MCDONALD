@@ -3,11 +3,6 @@ import {
   ImgMenu12,
   ImgMenu13,
   ImgMenu14,
-  ImgMenu15,
-  ImgMenu16,
-  ImgMenu17,
-  ImgMenu18,
-  ImgMenu19,
   ImgMenu20,
   ImgMenu21,
 } from '@assets/svgs/burgerImg/single';
